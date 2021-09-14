@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.28307.168
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CELTAPI", "CELTAPI\CELTAPI.csproj", "{2CBD09D5-CCFB-43F4-9208-B2C289CA24BC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CELTAPI.Tests", "CELTAPI.Tests\CELTAPI.Tests.csproj", "{D7F819EA-3A6B-453B-971D-4BA37763C2F2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CELTAPI.Tests", "CELTAPI.Tests\CELTAPI.Tests.csproj", "{4F5DF36F-DC7A-4C39-B3BB-211A21E4FDF3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,10 @@ Global
 		{2CBD09D5-CCFB-43F4-9208-B2C289CA24BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2CBD09D5-CCFB-43F4-9208-B2C289CA24BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2CBD09D5-CCFB-43F4-9208-B2C289CA24BC}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D7F819EA-3A6B-453B-971D-4BA37763C2F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D7F819EA-3A6B-453B-971D-4BA37763C2F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D7F819EA-3A6B-453B-971D-4BA37763C2F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D7F819EA-3A6B-453B-971D-4BA37763C2F2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4F5DF36F-DC7A-4C39-B3BB-211A21E4FDF3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4F5DF36F-DC7A-4C39-B3BB-211A21E4FDF3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4F5DF36F-DC7A-4C39-B3BB-211A21E4FDF3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4F5DF36F-DC7A-4C39-B3BB-211A21E4FDF3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

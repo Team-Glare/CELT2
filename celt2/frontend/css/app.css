@@ -6,6 +6,15 @@ body, #mainWrapper {
 }
 
 .large-textbox {
-    width: 65%;
-    height: 350px;
+    width: 30%;
+    height: 75px;
+}
+
+.red {
+    background-color: rgb(245, 100, 100);
+}
+
+.submit {
+    background-color: rgb(100, 245, 100);
+    font-size: 20px;
 }

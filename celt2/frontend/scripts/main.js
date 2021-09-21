@@ -1,4 +1,4 @@
-console.log("hit js!");
+var apiBaseUrl = 'http://localhost:64188/';
 
 function analyzeFile() {
     var file = document.getElementById("file");
@@ -12,7 +12,7 @@ function analyzeFile() {
         type: "get",
         data: file.files[0],
         dataType: "html",
-        url: "https://home/api/sentiment",
+        url: apiBaseUrl + "api/sentiment",
         success: function(data) {
             console.log("successful get, data= " + data);
         },
@@ -31,15 +31,17 @@ function analyzeText() {
     }
 
     $.ajax({
-        type: "get",
-        data: text.value,
-        dataType: "html",
-        url: "https://home/api/sentiment",
-        success: function(data) {
-            console.log("successful get, data= " + data);
+        type: "POST",
+        url: apiBaseUrl + "api/sentiment",
+        data: JSON.stringify({ SentimentText: text.value }),
+        dataType: "json",
+        contentType: "application/json",
+        cache: false,
+        success: function(response) {
+            $("#result").text(response);
         },
-        error: function(data) {
-            console.log("error= " + data);
+        error: function(err) {
+            console.log("error= " + err);
         },
     });
 }

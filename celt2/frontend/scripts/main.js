@@ -8,16 +8,20 @@ function analyzeFile() {
         return;
     }
 
+    var formData = new FormData();
+    formData.append('file', file.files[0]);
+
     $.ajax({
-        type: "get",
-        data: file.files[0],
-        dataType: "html",
-        url: apiBaseUrl + "api/sentiment",
+        type: "POST",
+        url: apiBaseUrl + "sentiment/text/file",
+        data: formData,
+        processData: false,
+        contentType: false,
         success: function(data) {
-            console.log("successful get, data= " + data);
+            $("#result").text(response);
         },
-        error: function(data) {
-            console.log("error= " + data);
+        error: function(err) {
+            console.log("error= " + err);
         },
     });
 }
@@ -32,7 +36,7 @@ function analyzeText() {
 
     $.ajax({
         type: "POST",
-        url: apiBaseUrl + "api/sentiment",
+        url: apiBaseUrl + "sentiment/text",
         data: JSON.stringify({ SentimentText: text.value }),
         dataType: "json",
         contentType: "application/json",

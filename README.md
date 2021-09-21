@@ -1,5 +1,8 @@
 # CELT2.0: Sentiment Analyzer
 
+## Introduction
+https://linear.app/celt2/team/CEL/board
+
 ## License
 This project is licensed under the MIT License
 

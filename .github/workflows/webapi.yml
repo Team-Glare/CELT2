@@ -5,13 +5,9 @@ on:
     branches: [ main ]
   pull_request:
     branches: [ main ]
-  paths-ignore:
-    - '**/*.md'
-    - '**/*.gitignore  
 
 jobs:
   build-and-test:
-
     runs-on: ubuntu-latest
     env:
       SOLUTIONPATH: celt2/API/CELTAPI.sln
@@ -22,6 +18,5 @@ jobs:
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: 5.0.x
-        
     - name: Build code
       run: dotnet build ${{env.SOLUTIONPATH}}

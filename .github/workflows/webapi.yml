@@ -18,11 +18,5 @@ jobs:
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: 5.0.x
-    - name: Setup MSBuild.exe
-      uses: warrenbuckley/Setup-MSBuild@v1
-
-    - name: MSBuild
-      working-directory: celt2/API/CELTAPI
-      run: msbuild CELTAPI.csproj
-    #- name: Build code
-     # run: dotnet build ${{env.SOLUTIONPATH}}
+    - name: Build code
+      run: dotnet build ${{env.SOLUTIONPATH}}

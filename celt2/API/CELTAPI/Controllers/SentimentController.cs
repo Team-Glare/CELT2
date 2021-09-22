@@ -1,14 +1,14 @@
-﻿using CELTAPI.Models;
+﻿using CELTAPI.Model;
 using CELTAPI.Services;
-using System.IO;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
-using System.Web;
-using System.Web.Http;
 
 namespace CELTAPI.Controllers
 {
-    [RoutePrefix("sentiment")]
-    public class SentimentController : ApiController
+    [Route("sentiment")]
+    [ApiController]
+    public class SentimentController : Controller
     {
         private readonly ISentimentService _sentimentService;
 
@@ -28,11 +28,12 @@ namespace CELTAPI.Controllers
 
         [HttpPost]
         [Route("text/file")]
-        public async Task<string> GenerateSentimentFromFile()
+        public async Task<string> GenerateSentimentFromFile(IFormFile file)
         {
-            var result = await _sentimentService.CalculateSentimentFromTextFile();
+            var result = await _sentimentService.CalculateSentimentFromTextFile(file);
 
             return result;
         }
     }
 }
+

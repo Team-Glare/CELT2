@@ -1,4 +1,5 @@
-﻿using CELTAPI.Models;
+﻿using CELTAPI.Model;
+using Microsoft.AspNetCore.Http;
 using System.Threading.Tasks;
 
 namespace CELTAPI.Services
@@ -7,6 +8,6 @@ namespace CELTAPI.Services
     {
         Task<string> CalculateSentimentFromText(TextInput input);
 
-        Task<string> CalculateSentimentFromTextFile();
+        Task<string> CalculateSentimentFromTextFile(IFormFile file);
     }
 }

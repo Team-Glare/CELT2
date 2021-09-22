@@ -1,4 +1,4 @@
-var apiBaseUrl = 'http://localhost:64188/';
+var apiBaseUrl = 'https://localhost:44386/';
 
 function analyzeFile() {
     var file = document.getElementById("file");
@@ -38,7 +38,6 @@ function analyzeText() {
         type: "POST",
         url: apiBaseUrl + "sentiment/text",
         data: JSON.stringify({ SentimentText: text.value }),
-        dataType: "json",
         contentType: "application/json",
         cache: false,
         success: function(response) {

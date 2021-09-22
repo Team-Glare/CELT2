@@ -11,10 +11,18 @@ jobs:
   build_and_push:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout the repo
+      - name: Checkout repository
         uses: actions/checkout@v2
-      - name: Build container image
-        run: docker build https://github.com/Team-Glare/CELT2#:celt2:server:Dockerfile
+      - name: Debug
+        run: echo "$GITHUB_WORKSPACE" && ls -al
+      - name: Change directory to Dockerfile location
+        run: cd ./celt2/server
+      - name: Debug
+        run: echo "$GITHUB_WORKSPACE" && ls -al
+      - name: Build image
+        run: cd ./celt2/server && docker build -t celt2/server .
+#       - name: Build container image
+#         run: docker build -f $GITHUB_WORKSPACE/celt2/server/Dockerfile .
       - name: Install doctl 
         uses: digitalocean/action-doctl@v2
         with:
@@ -22,6 +30,6 @@ jobs:
       - name: Log in to DO Container Registry 
         run: doctl registry login --expiry-seconds 600
       - name: Tag image
-        run: docker tag celt2/server registry.digitalocean.com/celt2-server/celt2-server:${{github.event.inputs.version }}
+        run: docker tag celt2/server registry.digitalocean.com/celt2-server/celt2-server:${{ github.event.inputs.version }}
       - name: Push image to DO Container Registry 
         run: docker push registry.digitalocean.com/celt2-server/celt2-server:${{ github.event.inputs.version }}

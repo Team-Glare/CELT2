@@ -8,7 +8,7 @@ on:
 
 jobs:
   build-and-test:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     env:
       SOLUTIONPATH: celt2/API/CELTAPI.sln
 
@@ -17,10 +17,16 @@ jobs:
     - name: Setup .NET
       uses: actions/setup-dotnet@v1
       with:
-        dotnet-version: 5.0.x
-    - name: Install Nuget Dependencies    
-      uses: NuGetCommand@2 
-      with: 
-        restoreSolution: ${{env.SOLUTIONPATH}}   
+        dotnet-version: 3.1.x
     - name: Build code
       run: dotnet build ${{env.SOLUTIONPATH}}
+      
+    - name: Make Directory for test results
+      run: mkdir -p testresults
+    - name: Run Nunit Tests
+      run: dotnet test ${{env.SOLUTIONPATH}} --logger html --results-directory testresults --no-build
+    - name: Upload test results
+      uses: actions/upload-artifact@v2
+      with:
+        name: TestRunReports
+        path: testresults

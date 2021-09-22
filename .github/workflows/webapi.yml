@@ -8,7 +8,7 @@ on:
 
 jobs:
   build-and-test:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     env:
       SOLUTIONPATH: celt2/API/CELTAPI.sln
 
@@ -18,9 +18,7 @@ jobs:
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: 5.0.x
-    - name: Install Nuget Dependencies    
-      uses: NuGetCommand@2 
-      with: 
-        restoreSolution: ${{env.SOLUTIONPATH}}   
+    - name: Restore dependencies
+      run: dotnet restore
     - name: Build code
       run: dotnet build ${{env.SOLUTIONPATH}}

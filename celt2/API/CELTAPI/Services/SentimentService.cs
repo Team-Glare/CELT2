@@ -1,7 +1,6 @@
 ﻿using CELTAPI.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
+using CELTAPI.Utilities;
+using System.IO;
 using System.Threading.Tasks;
 using System.Web;
 
@@ -9,9 +8,32 @@ namespace CELTAPI.Services
 {
     public class SentimentService : ISentimentService
     {
-        public async Task<string> CalculateSentiment(TextInput input)
+        private readonly IStreamReader _reader;
+        
+        public SentimentService(IStreamReader reader)
         {
-            return "positive";
+            _reader = reader;
+        }
+
+        public async Task<string> CalculateSentimentFromText(TextInput input)
+        {
+            return "Positive";
+        }
+
+
+        public async Task<string> CalculateSentimentFromTextFile()
+        {
+            var postedFile = HttpContext.Current.Request.Files["file"];
+            var input = "";
+
+            using (StreamReader streamReader = _reader.GetReader(postedFile.InputStream))
+            {
+                input = streamReader.ReadToEnd();
+                streamReader.Close();
+            }
+
+
+            return "Negative";
         }
     }
 }

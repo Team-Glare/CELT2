@@ -17,7 +17,7 @@ function analyzeFile() {
         data: formData,
         processData: false,
         contentType: false,
-        success: function(data) {
+        success: function(response) {
             $("#result").text(response);
         },
         error: function(err) {

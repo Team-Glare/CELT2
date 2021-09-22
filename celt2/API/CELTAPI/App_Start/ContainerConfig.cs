@@ -1,8 +1,10 @@
 ﻿using Autofac;
 using Autofac.Integration.WebApi;
 using CELTAPI.Services;
+using CELTAPI.Utilities;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Web;
@@ -33,6 +35,10 @@ namespace CELTAPI.App_Start
             builder.RegisterType<SentimentService>()
                    .As<ISentimentService>()
                    .InstancePerRequest();
+
+            builder.RegisterType<FileStreamReader>()
+                    .As<IStreamReader>()
+                    .InstancePerRequest();
 
             //Set the dependency resolver to be Autofac.  
             container = builder.Build();

@@ -1,11 +1,13 @@
 ﻿using CELTAPI.Models;
 using CELTAPI.Services;
+using System.IO;
 using System.Threading.Tasks;
+using System.Web;
 using System.Web.Http;
 
 namespace CELTAPI.Controllers
 {
-    [RoutePrefix("api/sentiment")]
+    [RoutePrefix("sentiment")]
     public class SentimentController : ApiController
     {
         private readonly ISentimentService _sentimentService;
@@ -16,9 +18,19 @@ namespace CELTAPI.Controllers
         }
 
         [HttpPost]
-        public async Task<string> GenerateSentiment(TextInput input)
+        [Route("text")]
+        public async Task<string> GenerateSentimentFromText(TextInput input)
         {
-            var result = await _sentimentService.CalculateSentiment(input);
+            var result = await _sentimentService.CalculateSentimentFromText(input);
+
+            return result;
+        }
+
+        [HttpPost]
+        [Route("text/file")]
+        public async Task<string> GenerateSentimentFromFile()
+        {
+            var result = await _sentimentService.CalculateSentimentFromTextFile();
 
             return result;
         }

@@ -13,11 +13,20 @@ jobs:
     steps:
       - name: Checkout the repo
         uses: actions/checkout@v2
-      - name: DigitalOcean Docker Image Publish
-        # You may pin to the exact commit or the version.
-        # uses: ripplr-io/docr-docker-publish@44fac8d6ff7c3ece58c9ffe50f370514d166f5b7
-        uses: ripplr-io/docr-docker-publish@v1
+      - name: into-docker
+        uses: into-docker/build-action@v2
         with:
-          # Image path in the format registry-name/image-name
-          image_path: celt2-server/celt-2-server-${{github.event.inputs.version}}
-          dockerfile: ./server/Dockerfile
+          builder: ubuntu-latest
+          source-path: ./celt2/server
+      - name: Install doctl 
+        uses: digitalocean/action-doctl@v2
+        with:
+          token: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
+      - name: Log in to DO Container Registry 
+        run: doctl registry login --expiry-seconds 600
+      - name: Tag image 
+        run:
+          docker tag sample/my-page \
+          registry.digitalocean.com/my-sample-registry/my-sample-page:${{github.event.inputs.version }}
+      - name: Push image to DO Container Registry 
+        run: docker push registry.digitalocean.com/my-sample-registry/my-sample-page:${{ github.event.inputs.version }}

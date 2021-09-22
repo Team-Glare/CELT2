@@ -10,13 +10,41 @@ import java.util.List;
 public class SentimentAnalysis {
     public static void main(String[] args) {
         StanfordCoreNLP stanfordCoreNLP = Pipeline.getPipeline();
-        String text = "Hello! I hate Thor. life is beautiful. I love my life.";
-        CoreDocument coreDocument = new CoreDocument(text);
+        CoreDocument coreDocument = new CoreDocument(args[0]);
         stanfordCoreNLP.annotate(coreDocument);
         List<CoreSentence> sentences = coreDocument.sentences();
+        int i = 1;
+        float emotionTotal = 0, emotionCount = 0;
         for(CoreSentence sentence: sentences){
             String sentiment = sentence.sentiment();
-            System.out.println(sentiment+ " : " + sentence);
+            System.out.println(i+" "+sentiment+ " : " + sentence);
+            emotionCount++;
+            if(sentiment.equalsIgnoreCase("negative")){
+                emotionTotal+=-1;
+            }
+            else if(sentiment.equalsIgnoreCase("very negative")){
+                emotionTotal+=-2;
+            }
+            else if(sentiment.equalsIgnoreCase("positive")){
+                emotionTotal+=1;
+            }
+            else if(sentiment.equalsIgnoreCase("very positive")){
+                emotionTotal+=2;
+            }
+            i++;
+        }
+        if(emotionCount==0){
+            System.out.println("Neutral");
+        }
+        else{
+            float t = emotionTotal/emotionCount;
+            System.out.println(t);
+            if(t<-0.5)
+                System.out.println("Negative");
+            else if(t>0.5)
+                System.out.println("Positive");
+            else
+               System.out.println("Neutral");
         }
     }
 }

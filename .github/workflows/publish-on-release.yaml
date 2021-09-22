@@ -15,7 +15,7 @@ jobs:
         working-directory: ./celt2/server
     steps:
       - name: Build container image
-        run: docker build ./Dockerfile -t registry.digitalocean.com/celt2-server/celt2-server:${{ github.event.inputs.version }}
+        run: docker build ./
       - name: Install doctl 
         uses: digitalocean/action-doctl@v2
         with:

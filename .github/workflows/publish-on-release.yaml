@@ -10,8 +10,9 @@ on:
 jobs:
   build_and_push:
     runs-on: ubuntu-latest
-    env:
-      working-directory: ./celt2/server
+    defaults:
+      run:
+        working-directory: ./celt2/server
     steps:
       - name: Build container image
         run: docker build ./ -t registry.digitalocean.com/celt2-server/celt2-server:${{ github.event.inputs.version }}

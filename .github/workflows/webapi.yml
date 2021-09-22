@@ -18,7 +18,9 @@ jobs:
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: 5.0.x
-    - name: Restore dependencies
-      run: dotnet restore    
+    - name: Install Dependencies Nuget    
+      uses: NuGetCommand@2 
+      with: 
+        restoreSolution: ${{env.SOLUTIONPATH}}   
     - name: Build code
       run: dotnet build ${{env.SOLUTIONPATH}}

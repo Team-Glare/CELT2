@@ -20,7 +20,7 @@ jobs:
       - name: Debug
         run: echo "$GITHUB_WORKSPACE" && ls -al
       - name: Build image
-        run: docker build .
+        run: cd ./celt2/server && docker build .
 #       - name: Build container image
 #         run: docker build -f $GITHUB_WORKSPACE/celt2/server/Dockerfile .
       - name: Install doctl 

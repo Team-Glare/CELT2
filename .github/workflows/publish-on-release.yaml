@@ -14,7 +14,7 @@ jobs:
       - name: Checkout the repo
         uses: actions/checkout@v2
       - name: Build container image
-        run: docker build https://github.com/Team-Glare/CELT2.git#main:celt2:server:Dockerfile
+        run: docker build https://github.com/Team-Glare/CELT2.git#main:celt2:server
       - name: Install doctl 
         uses: digitalocean/action-doctl@v2
         with:

@@ -11,8 +11,10 @@ jobs:
   build_and_push:
     runs-on: ubuntu-latest
     steps:
+      - name: Clone repository to local worker
+        run: git clone https://github.com/Team-Glare/CELT2.git
       - name: Change directory to Dockerfile location
-        run: cd ./celt2/server
+        run: cd ./CELT2/celt2/server
       - name: Build container image
         run: docker build ./
       - name: Install doctl 

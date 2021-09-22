@@ -20,7 +20,7 @@ jobs:
       - name: Debug
         run: echo "$GITHUB_WORKSPACE" && ls -al
       - name: Build image
-        run: cd ./celt2/server && docker build .
+        run: cd ./celt2/server && docker build -t celt2/server .
 #       - name: Build container image
 #         run: docker build -f $GITHUB_WORKSPACE/celt2/server/Dockerfile .
       - name: Install doctl 
@@ -29,5 +29,6 @@ jobs:
           token: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
       - name: Log in to DO Container Registry 
         run: doctl registry login --expiry-seconds 600
+      - name: docker tag celt2/server registry.digitalocean.com/celt2-server/celt2-server:${{ github.event.inputs.version }}
       - name: Push image to DO Container Registry 
         run: docker push registry.digitalocean.com/celt2-server/celt2-server:${{ github.event.inputs.version }}

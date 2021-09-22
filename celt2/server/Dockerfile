@@ -1,5 +1,9 @@
-# Import python 3.6 base repo from Docker repo: View images at https://hub.docker.com/_/python
-FROM python:3.6-bullseye
+# Import openjdk image for sentiment analysis usage
+# Copy python 3.6 base image from Docker repo: View images at https://hub.docker.com/_/python
+# This is a new feature as of Docker 17.05 called multi-stage builds
+# https://docs.docker.com/develop/develop-images/multistage-build/
+FROM openjdk:slim
+COPY --from=python:3.9-slim-bullseye / /
 
 # Set current working directory for future instructions: Documentation specifically only lists
 # RUN, CMD, ENTRYPOINT, COPY, and ADD. If the folder doesn't exist, it will be created.

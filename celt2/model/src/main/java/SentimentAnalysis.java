@@ -17,7 +17,7 @@ public class SentimentAnalysis {
         float emotionTotal = 0, emotionCount = 0;
         for(CoreSentence sentence: sentences){
             String sentiment = sentence.sentiment();
-            System.out.println(i+" "+sentiment+ " : " + sentence);
+            //System.out.println(i+" "+sentiment+ " : " + sentence);
             emotionCount++;
             if(sentiment.equalsIgnoreCase("negative")){
                 emotionTotal+=-1;
@@ -38,7 +38,7 @@ public class SentimentAnalysis {
         }
         else{
             float t = emotionTotal/emotionCount;
-            System.out.println(t);
+            //System.out.println(t);
             if(t<-0.5)
                 System.out.println("Negative");
             else if(t>0.5)

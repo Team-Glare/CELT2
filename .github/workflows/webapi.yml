@@ -23,7 +23,7 @@ jobs:
       
     - name: Make Directory for test results
       run: mkdir -p testresults
-    - name: Run Xunit Tests
+    - name: Run Nunit Tests
       run: dotnet test ${{env.SOLUTIONPATH}} --logger html --results-directory testresults --no-build
     - name: Upload test results
       uses: actions/upload-artifact@v2

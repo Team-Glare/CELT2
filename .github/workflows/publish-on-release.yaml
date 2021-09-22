@@ -17,8 +17,10 @@ jobs:
         run: echo "$GITHUB_WORKSPACE" && ls -al
       - name: Change directory to Dockerfile location
         run: cd ./celt2/server
-      - name: Build container image
-        run: docker build -f $GITHUB_WORKSPACE/celt2/server/Dockerfile .
+      - name: Build image
+        run: docker build .
+#       - name: Build container image
+#         run: docker build -f $GITHUB_WORKSPACE/celt2/server/Dockerfile .
       - name: Install doctl 
         uses: digitalocean/action-doctl@v2
         with:

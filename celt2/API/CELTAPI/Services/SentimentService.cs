@@ -1,15 +1,15 @@
-﻿using CELTAPI.Models;
+﻿using CELTAPI.Model;
 using CELTAPI.Utilities;
+using Microsoft.AspNetCore.Http;
 using System.IO;
 using System.Threading.Tasks;
-using System.Web;
 
 namespace CELTAPI.Services
 {
     public class SentimentService : ISentimentService
     {
         private readonly IStreamReader _reader;
-        
+
         public SentimentService(IStreamReader reader)
         {
             _reader = reader;
@@ -21,12 +21,10 @@ namespace CELTAPI.Services
         }
 
 
-        public async Task<string> CalculateSentimentFromTextFile()
+        public async Task<string> CalculateSentimentFromTextFile(IFormFile file)
         {
-            var postedFile = HttpContext.Current.Request.Files["file"];
             var input = "";
-
-            using (StreamReader streamReader = _reader.GetReader(postedFile.InputStream))
+            using (StreamReader streamReader = _reader.GetReader(file.OpenReadStream()))
             {
                 input = streamReader.ReadToEnd();
                 streamReader.Close();

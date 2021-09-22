@@ -1,16 +1,15 @@
-﻿using CELTAPI.Models;
+﻿using CELTAPI.Model;
 using CELTAPI.Services;
 using CELTAPI.Utilities;
 using Moq;
 using NUnit.Framework;
+using System;
+using System.Collections.Generic;
+using System.Text;
 using System.Threading.Tasks;
 
 namespace CELTAPI.Tests.Services
 {
-    /// <summary>
-    /// Tests for Sentiment Service
-    /// </summary>
-
     public class SentimentServiceShould
     {
         [Test]

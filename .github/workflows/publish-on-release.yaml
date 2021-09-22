@@ -16,7 +16,7 @@ jobs:
       - name: Debug
         run: echo "$GITHUB_WORKSPACE" && ls -al
       - name: Change directory to Dockerfile location
-        run: cd $GITHUB_WORKSPACE/CELT2/server
+        run: cd $GITHUB_WORKSPACE/celt2/server
       - name: Build container image
         run: docker build ./
       - name: Install doctl 

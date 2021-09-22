@@ -18,4 +18,4 @@ jobs:
         with:
           # Image path in the format registry-name/image-name
           image_path: celt2-server/celt-2-server-${{github.event.inputs.version}}
-          dockerfile: ./celt2/server/Dockerfile
+          dockerfile: ./server/Dockerfile

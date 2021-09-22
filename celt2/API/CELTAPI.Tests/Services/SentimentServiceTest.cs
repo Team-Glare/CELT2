@@ -1,5 +1,6 @@
 ﻿using CELTAPI.Models;
 using CELTAPI.Services;
+using CELTAPI.Utilities;
 using Moq;
 using NUnit.Framework;
 using System.Threading.Tasks;
@@ -16,11 +17,12 @@ namespace CELTAPI.Tests.Services
         public async Task CalculateSentimentEquality()
         {
             var mockTextInput = new Mock<TextInput>();
-            var sut = new SentimentService();
+            var mockStreamReader = new Mock<IStreamReader>();
+            var sut = new SentimentService(mockStreamReader.Object);
 
-            var result = await sut.CalculateSentiment(mockTextInput.Object);
+            var result = await sut.CalculateSentimentFromText(mockTextInput.Object);
 
-            Assert.That(result, Is.EqualTo("positive"));
+            Assert.That(result, Is.EqualTo("Positive"));
         }
     }
 }

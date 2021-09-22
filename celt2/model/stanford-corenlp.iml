@@ -12,11 +12,15 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="file://$USER_HOME$/Downloads/stanford-corenlp-4.2.2/stanford-corenlp-4.2.2" />
+          <root url="file://$USER_HOME$/Downloads/stanford-corenlp-4.2.2" />
         </CLASSES>
         <JAVADOC />
-        <SOURCES />
-        <jarDirectory url="file://$USER_HOME$/Downloads/stanford-corenlp-4.2.2/stanford-corenlp-4.2.2" recursive="false" />
+        <SOURCES>
+          <root url="file://$USER_HOME$/Downloads/stanford-corenlp-4.2.2" />
+          <root url="file://$USER_HOME$/Downloads/stanford-corenlp-4.2.2" />
+        </SOURCES>
+        <jarDirectory url="file://$USER_HOME$/Downloads/stanford-corenlp-4.2.2" recursive="false" />
+        <jarDirectory url="file://$USER_HOME$/Downloads/stanford-corenlp-4.2.2" recursive="false" type="SOURCES" />
       </library>
     </orderEntry>
   </component>

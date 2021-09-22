@@ -16,7 +16,7 @@ jobs:
       - name: Debug
         run: echo "$GITHUB_WORKSPACE" && ls -al
       - name: Build container image
-        run: docker build -f $GITHUB_WORKSPACE/celt2/server
+        run: docker build -f $GITHUB_WORKSPACE/celt2/server .
       - name: Install doctl 
         uses: digitalocean/action-doctl@v2
         with:

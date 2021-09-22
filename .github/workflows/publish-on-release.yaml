@@ -17,6 +17,8 @@ jobs:
         run: echo "$GITHUB_WORKSPACE" && ls -al
       - name: Change directory to Dockerfile location
         run: cd ./celt2/server
+      - name: Debug
+        run: echo "$GITHUB_WORKSPACE" && ls -al
       - name: Build image
         run: docker build .
 #       - name: Build container image

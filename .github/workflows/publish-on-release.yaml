@@ -10,10 +10,9 @@ on:
 jobs:
   build_and_push:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: ./celt2/server
     steps:
+      - name: Change directory to Dockerfile location
+        run: cd ./celt2/server
       - name: Build container image
         run: docker build ./
       - name: Install doctl 

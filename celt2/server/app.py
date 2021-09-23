@@ -15,7 +15,7 @@ def hello_world():
 @app.route("/submit_string")
 def accept_string():
     data = request.get_json()
-    return "JSON: " + str(data) + " accepted
+    return "JSON: " + str(data) + " accepted"
 
 if __name__ == '__main__':
     app.run()

@@ -12,6 +12,10 @@ def hello_world():
     # Returns the entirety of the page; in this case, it is just the word "Test"
     return "<p>Test</p>"
 
+# Define the app route, so if we had http://localhost:5000/ as the landing page,
+# this opens up the route http://localhost:5000/submit_string
+# This accepts GET requests with a JSON content-type. Replies with a String
+# containing the content they sent. For testing/debugging purposes.
 @app.route("/submit_string")
 def accept_string():
     data = request.get_json()

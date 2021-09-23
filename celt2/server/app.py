@@ -23,7 +23,7 @@ def accept_string():
     possible_labels = ['positive', 'negative', 'neutral']
     random_index = random.randint(0, len(possible_labels) - 1)
     random_value = random.randint(0, 100)
-    returned_data = { possible_labels[random_index]: random_value }
+    returned_data = { "label": possible_labels[random_index], "value": random_value }
     return returned_data
 
 if __name__ == '__main__':

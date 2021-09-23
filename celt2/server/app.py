@@ -18,23 +18,12 @@ def hello_world():
     # Returns the entirety of the page; in this case, it is just the word "Test"
     return "<p>Test</p>"
 
-# Define the app route, so if we had http://localhost:5000/ as the landing page,
-# this opens up the route http://localhost:5000/submit_string
-# This accepts GET requests with a JSON content-type. Replies with a String
-# containing the content they sent. For testing/debugging purposes.
-@app.route("/submit_string", methods = ['POST'])
-def accept_string():
-    possible_labels = ['positive', 'negative', 'neutral']
-    random_index = random.randint(0, len(possible_labels) - 1)
-    random_value = random.randint(0, 100)
-    returned_data = { "label": possible_labels[random_index], "value": random_value }
-    return returned_data
-
-@app.route("/get_sentiment", methods = ['GET'])
+@app.route("/sentiment/text", methods = ['POST', 'GET'])
 def get_sentiment():
     print("Received request: " + str(request))
     model_path = "../model/model.py"
-    passed_data = request.get_json()
+    passed_data = request.get_json()['sentimentText']
+    print("Parsed data: " + str(passed_data))
     parsed_sentences = tokenizer.tokenize(passed_data)
     print("Tokenized sentences: " + str(parsed_sentences))
     all_sentiments = []

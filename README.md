@@ -3,7 +3,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)  
 [![codecov](https://img.shields.io/badge/codecov-100%25-brightgreen)](https://codecov.io/gh/Team-Glare/CELT2) 
 
-Add code coverage, build, zonedo doi badges as done in hw2b
+Add build, zonedo doi badges as done in hw2b
 
 ## Introduction
 * [Linear.app Issues Board](https://linear.app/celt2/team/CEL/board)

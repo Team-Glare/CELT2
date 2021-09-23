@@ -34,8 +34,9 @@ namespace CELTAPI.Services
                 streamReader.Close();
             }
 
+            var result = await _serverClient.PostAsync<SentimentResult, string>($"submit_string", input);
 
-            return "Negative";
+            return result.label;
         }
     }
 }

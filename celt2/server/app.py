@@ -1,6 +1,8 @@
 import os
 from flask import Flask
 from flask import request
+import json
+import random
 # Boilerplate used from: https://flask.palletsprojects.com/en/2.0.x/quickstart/
 
 # Define the Flask App
@@ -18,8 +20,11 @@ def hello_world():
 # containing the content they sent. For testing/debugging purposes.
 @app.route("/submit_string", methods = ['POST'])
 def accept_string():
-    data = request.get_json()
-    return "JSON: " + str(data) + " accepted"
+    possible_labels = ['positive', 'negative', 'neutral']
+    random_index = random.randint(0, len(possible_labels) - 1)
+    random_value = random.randint(0, 100)
+    returned_data = { possible_labels[random_index]: random_value }
+    return returned_data
 
 if __name__ == '__main__':
     app.run()

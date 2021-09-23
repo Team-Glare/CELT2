@@ -1,6 +1,7 @@
 # CELT2.0: Sentiment Analyzer  
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)  
+Add code coverage, build, zonedo doi badges as done in hw2b
 
 ## Introduction
 https://linear.app/celt2/team/CEL/board

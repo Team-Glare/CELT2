@@ -63,6 +63,7 @@ namespace CELTAPI
             app.UseSwaggerUI(c =>
             {
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "CELT2 API");
+                c.RoutePrefix = String.Empty;
             });
 
             app.UseCors("CELT2Policy");

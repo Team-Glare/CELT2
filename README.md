@@ -5,6 +5,7 @@ Add code coverage, build, zonedo doi badges as done in hw2b
 
 ## Introduction
 https://linear.app/celt2/team/CEL/board
+Our website: [CELT2.0](https://team-glare.github.io/CELT2/)
 
 ## License
 This project is licensed under the MIT License

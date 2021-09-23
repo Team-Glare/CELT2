@@ -25,6 +25,16 @@ jobs:
 
     - name: Build with dotnet
       run: dotnet build ${{env.SOLUTIONPATH}} --configuration Release
+      
+    - name: Make Directory for test results
+      run: mkdir -p testresults
+    - name: Run Nunit Tests
+      run: dotnet test ${{env.SOLUTIONPATH}} --logger html --results-directory testresults --no-build
+    - name: Upload test results
+      uses: actions/upload-artifact@v2
+      with:
+        name: TestRunReports
+        path: testresults
 
     - name: dotnet publish
       run: dotnet publish ${{env.SOLUTIONPATH}} -c Release -o ${{env.DOTNET_ROOT}}/myapp

@@ -16,7 +16,7 @@ def hello_world():
 # this opens up the route http://localhost:5000/submit_string
 # This accepts GET requests with a JSON content-type. Replies with a String
 # containing the content they sent. For testing/debugging purposes.
-@app.route("/submit_string")
+@app.route("/submit_string", methods = ['POST'])
 def accept_string():
     data = request.get_json()
     return "JSON: " + str(data) + " accepted"

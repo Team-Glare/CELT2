@@ -1,4 +1,4 @@
-var apiBaseUrl = 'https://localhost:44386/';
+var apiBaseUrl = 'https://celtapi.azurewebsites.net/';
 
 function analyzeFile() {
     var file = document.getElementById("file");

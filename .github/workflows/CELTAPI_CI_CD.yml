@@ -1,0 +1,69 @@
+# Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
+# More GitHub Actions for Azure: https://github.com/Azure/actions
+
+name: Build and deploy CELTAPI to Azure Web App
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+     - 'celt2/API/**'
+
+jobs:
+  build:
+    runs-on: windows-latest
+    env:
+      SOLUTIONPATH: celt2/API/CELTAPI.sln
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Set up .NET Core
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: '3.1.x'
+
+    - name: Build with dotnet
+      run: dotnet build ${{env.SOLUTIONPATH}}
+      
+    - name: Make Directory for test results
+      run: mkdir -p testresults
+    - name: Run Nunit Tests
+      run: dotnet test ${{env.SOLUTIONPATH}} --logger html --results-directory testresults --no-build
+    - name: Upload test results
+      uses: actions/upload-artifact@v2
+      with:
+        name: TestRunReports
+        path: testresults
+
+    - name: dotnet publish
+      run: dotnet publish ${{env.SOLUTIONPATH}} -c Release -o ${{env.DOTNET_ROOT}}/myapp
+
+    - name: Upload artifact for deployment job
+      uses: actions/upload-artifact@v2
+      with:
+        name: .net-app
+        path: ${{env.DOTNET_ROOT}}/myapp
+
+  deploy:
+    runs-on: windows-latest
+    needs: build
+    environment:
+      name: 'production'
+      url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
+
+    steps:
+    - name: Download artifact from build job
+      uses: actions/download-artifact@v2
+      with:
+        name: .net-app
+
+    - name: Deploy to Azure Web App
+      id: deploy-to-webapp
+      uses: azure/webapps-deploy@v2
+      with:
+        app-name: 'CELTAPI'
+        slot-name: 'production'
+        publish-profile: ${{ secrets.AzureAppService_PublishProfile_cbe4212ffa57438f8b77a833685259b5 }}
+        package: .

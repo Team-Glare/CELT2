@@ -21,7 +21,11 @@ namespace CELTAPI.Tests.Services
             var mockTextInput = new Mock<TextInput>();
             var mockStreamReader = new Mock<IStreamReader>();
             var mockServerClient = new Mock<IServerClient>();
-            mockServerClient.Setup(o => o.PostAsync<string, string>(It.IsAny<string>(), It.IsAny<string>())).ReturnsAsync("Positive");
+
+            var mockResult = new SentimentResult();
+            mockResult.label = "Positive";
+
+            mockServerClient.Setup(o => o.PostAsync<SentimentResult, string>(It.IsAny<string>(), It.IsAny<string>())).ReturnsAsync(mockResult);
 
             var sut = new SentimentService(mockStreamReader.Object, mockServerClient.Object);
             var result = await sut.CalculateSentimentFromText(mockTextInput.Object);

@@ -19,8 +19,9 @@ namespace CELTAPI.Services
 
         public async Task<string> CalculateSentimentFromText(TextInput input)
         {
-            var result = await _serverClient.PostAsync<string, string>($"submit_string", input.SentimentText);
-            return result;
+            var result = await _serverClient.PostAsync<SentimentResult, string>($"submit_string", input.SentimentText);
+
+            return result.label;
         }
 
 

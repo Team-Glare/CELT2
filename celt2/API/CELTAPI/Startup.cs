@@ -23,6 +23,8 @@ namespace CELTAPI
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.AddHttpClient();
+            services.AddHttpContextAccessor();
 
             // Register the Swagger generator
             services.AddSwaggerGen(c =>
@@ -41,6 +43,8 @@ namespace CELTAPI
                        .AllowAnyMethod()
                        .AllowAnyHeader();
             }));
+
+            services.Configure<AppSettings>(Configuration);
 
             DependencyInjections(services);
         }
@@ -80,6 +84,7 @@ namespace CELTAPI
 
             // Helpers
             services.AddSingleton<IStreamReader, FileStreamReader>();
+            services.AddScoped<IServerClient, ServerClient>();
         }
     }
 }

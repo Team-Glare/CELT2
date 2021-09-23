@@ -9,15 +9,18 @@ namespace CELTAPI.Services
     public class SentimentService : ISentimentService
     {
         private readonly IStreamReader _reader;
+        private readonly IServerClient _serverClient;
 
-        public SentimentService(IStreamReader reader)
+        public SentimentService(IStreamReader reader, IServerClient serverClient)
         {
             _reader = reader;
+            _serverClient = serverClient;
         }
 
         public async Task<string> CalculateSentimentFromText(TextInput input)
         {
-            return "Positive";
+            var result = await _serverClient.PostAsync<string, string>($"submit_string", input.SentimentText);
+            return result;
         }
 
 

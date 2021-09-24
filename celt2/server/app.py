@@ -9,7 +9,10 @@ import subprocess
 # Allows for access to model. The Dockerfile accounts for this.
 print(os.path.dirname(os.path.dirname(os.path.realpath(__file__))))
 sys.path.append(os.path.dirname(os.path.dirname(os.path.realpath(__file__))) + 'model')
-from model.model import classify
+try:
+    from model.model import classify
+except ModuleNotFoundError:
+    from model import classify
 # Boilerplate used from: https://flask.palletsprojects.com/en/2.0.x/quickstart/
 # Define the Flask App
 app = Flask(__name__)

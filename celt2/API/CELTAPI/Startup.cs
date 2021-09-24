@@ -2,6 +2,7 @@ using CELTAPI.Services;
 using CELTAPI.Utilities;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -59,6 +60,7 @@ namespace CELTAPI
 
             app.UseHttpsRedirection();
 
+            // Use the Swagger
             app.UseSwagger();
             app.UseSwaggerUI(c =>
             {
@@ -66,11 +68,9 @@ namespace CELTAPI
                 c.RoutePrefix = String.Empty;
             });
 
-            app.UseCors("CELT2Policy");
-
             app.UseRouting();
 
-            app.UseAuthorization();
+            app.UseCors("CELT2Policy");
 
             app.UseEndpoints(endpoints =>
             {

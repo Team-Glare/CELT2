@@ -13,7 +13,7 @@ namespace CELTAPI.Tests.Services
     public class SentimentServiceShould
     {
         [Test]
-        public async Task CalculateSentimentEquality()
+        public async Task CalculateSentimentFromTextEquality()
         {
             var mockTextInput = new Mock<TextInput>();
             var mockStreamReader = new Mock<IStreamReader>();
@@ -30,6 +30,26 @@ namespace CELTAPI.Tests.Services
             var result = await sut.CalculateSentimentFromText(mockTextInput.Object);
 
             Assert.That(result, Is.EqualTo("Positive"));
+        }
+
+        [Test]
+        public async Task CalculateSentimentFromTextInEquality()
+        {
+            var mockTextInput = new Mock<TextInput>();
+            var mockStreamReader = new Mock<IStreamReader>();
+            var mockServerClient = new Mock<IServerClient>();
+
+            var mockResult = new SentimentResult
+            {
+                label = "Positive"
+            };
+
+            mockServerClient.Setup(o => o.PostAsync<SentimentResult, string>(It.IsAny<string>(), It.IsAny<string>())).ReturnsAsync(mockResult);
+
+            var sut = new SentimentService(mockStreamReader.Object, mockServerClient.Object);
+            var result = await sut.CalculateSentimentFromText(mockTextInput.Object);
+
+            Assert.That(result, Is.Not.EqualTo("Negative"));
         }
 
         [Test]
@@ -52,6 +72,28 @@ namespace CELTAPI.Tests.Services
             var result = await sut.CalculateSentimentFromTextFile(mockFormFile.Object);
 
             Assert.That(result, Is.EqualTo("Positive"));
+        }
+
+        [Test]
+        public async Task CalculateSentimentFromTextFileInEquality()
+        {
+            var mockFormFile = new Mock<IFormFile>();
+            var mockStreamReader = new Mock<IStreamReader>();
+            var mockServerClient = new Mock<IServerClient>();
+
+            var mockResult = new SentimentResult
+            {
+                label = "Positive"
+            };
+
+            mockStreamReader.Setup(o => o.GetReader(mockFormFile.Object.OpenReadStream())).Returns(new StreamReader(new MemoryStream(Encoding.UTF8.GetBytes("This is a dummy file"))));
+
+            mockServerClient.Setup(o => o.PostAsync<SentimentResult, string>(It.IsAny<string>(), It.IsAny<string>())).ReturnsAsync(mockResult);
+
+            var sut = new SentimentService(mockStreamReader.Object, mockServerClient.Object);
+            var result = await sut.CalculateSentimentFromTextFile(mockFormFile.Object);
+
+            Assert.That(result, Is.Not.EqualTo("Negative"));
         }
     }
 }

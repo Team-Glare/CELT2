@@ -22,7 +22,7 @@ jobs:
 #       - name: Build image
 #         run: cd ./celt2 && docker build -t celt2/server .
       - name: Build container image
-        run: cd ./celt2 && docker build . -f $GITHUB_WORKSPACE/celt2/server/Dockerfile .
+        run: cd ./celt2 && docker build -t celt2/server -f $GITHUB_WORKSPACE/celt2/server/Dockerfile .
       - name: Install doctl 
         uses: digitalocean/action-doctl@v2
         with:

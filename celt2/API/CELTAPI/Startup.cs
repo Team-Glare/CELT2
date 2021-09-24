@@ -67,9 +67,9 @@ namespace CELTAPI
                 c.RoutePrefix = String.Empty;
             });
 
-            app.UseCors("CELT2Policy");
-
             app.UseRouting();
+
+            app.UseCors("CELT2Policy");
 
             app.UseEndpoints(endpoints =>
             {

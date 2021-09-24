@@ -10,7 +10,10 @@ Add zonedo doi badges as done in hw2b
 * [Linear.app Issues Board](https://linear.app/celt2/team/CEL/board)
 * [CELT2.0 Website](https://team-glare.github.io/CELT2/)
 ## License
-This project is licensed under the MIT License
+This project is licensed under the MIT License  
+
+## How to Contribute?  
+Please take a look at our CONTRIBUTING.md where we provide instructions on contributing to the repo and help us in enhancing this analyzer.
 
 ## Version
 Initial release version 1.0.1

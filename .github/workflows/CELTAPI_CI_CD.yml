@@ -25,7 +25,7 @@ jobs:
         dotnet-version: '3.1.x'
 
     - name: Build with dotnet
-      run: dotnet build ${{env.SOLUTIONPATH}} --configuration Release
+      run: dotnet build ${{env.SOLUTIONPATH}}
       
     - name: Make Directory for test results
       run: mkdir -p testresults

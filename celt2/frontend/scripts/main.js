@@ -17,6 +17,7 @@ function analyzeFile() {
         data: formData,
         processData: false,
         contentType: false,
+        crossDomain: true,
         success: function(response) {
             $("#result").text(response);
         },
@@ -39,6 +40,7 @@ function analyzeText() {
         url: apiBaseUrl + "sentiment/text",
         data: JSON.stringify({ SentimentText: text.value }),
         contentType: "application/json",
+        crossDomain: true,
         cache: false,
         success: function(response) {
             $("#result").text(response);

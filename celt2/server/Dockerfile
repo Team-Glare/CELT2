@@ -22,12 +22,12 @@ ARG DEBIAN_FRONTEND=noninteractive
 
 # A dependency requires GCC to install. This package installs that, amongst others. The -y flag has the same
 # functionality as the previous DEBIAN_FRONTEND arg, but sometimes it doesn't work for apt.
-RUN apt update && apt -y install build-essential
+RUN apt update && apt -y install gcc && apt -y install g++
 
 # Take each line in requirements.txt, find the package, and install the version listed.
 RUN pip install -r ./requirements.txt 
-RUN pip install -r ./model_requirements.txt -f https://download.pytorch.org/whl/torch_stable.html
- 
+RUN pip install -r ./model_requirements.txt -f https://download.pytorch.org/whl/lts/1.8/torch_lts.html
+
 # Specify that I want to run python upon starting the container
 ENTRYPOINT [ "python" ]
 

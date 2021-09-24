@@ -1,16 +1,22 @@
 # CELT2.0: Sentiment Analyzer  
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)  
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) [![GitHub issues](https://img.shields.io/github/issues/Team-Glare/CELT2)](https://github.com/Team-Glare/CELT2/issues)  
+
 [![codecov](https://img.shields.io/badge/codecov-100%25-brightgreen)](https://codecov.io/gh/Team-Glare/CELT2)
+
+[![DOI](https://zenodo.org/badge/403367995.svg)](https://zenodo.org/badge/latestdoi/403367995) 
+
 [![Build and deploy CELTAPI to Azure Web App](https://github.com/Team-Glare/CELT2/actions/workflows/CELTAPI_CI_CD.yml/badge.svg)](https://github.com/Team-Glare/CELT2/actions/workflows/CELTAPI_CI_CD.yml)
 
-Add build, zonedo doi badges as done in hw2b
 
 ## Introduction
 * [Linear.app Issues Board](https://linear.app/celt2/team/CEL/board)
 * [CELT2.0 Website](https://team-glare.github.io/CELT2/)
 ## License
-This project is licensed under the MIT License
+This project is licensed under the MIT License  
+
+## How to Contribute?  
+Please take a look at our CONTRIBUTING.md where we provide instructions on contributing to the repo and help us in enhancing this analyzer.
 
 ## Version
 Initial release version 1.0.1

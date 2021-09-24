@@ -9,7 +9,9 @@ import flair
 from flair.models import TextClassifier
 from flair.data import Sentence
 classifier = TextClassifier.load('en-sentiment')
-sentence = Sentence(sys.argv[1])
-classifier.predict(sentence)
+def classify(data):
+    sentence = Sentence(data)
+    classifier.predict(sentence)
+    return sentence.labels[0]
 # print sentence with predicted labels
-print(sentence.labels[0])
+#print(sentence.labels[0])

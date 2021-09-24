@@ -13,7 +13,7 @@ namespace CELTAPI.Tests.Services
     public class SentimentServiceShould
     {
         [Test]
-        public async Task CalculateSentimentEquality()
+        public async Task CalculateSentimentFromTextEquality()
         {
             var mockTextInput = new Mock<TextInput>();
             var mockStreamReader = new Mock<IStreamReader>();
@@ -32,7 +32,8 @@ namespace CELTAPI.Tests.Services
             Assert.That(result, Is.EqualTo("Positive"));
         }
 
-        public async Task CalculateSentimentInEquality()
+        [Test]
+        public async Task CalculateSentimentFromTextInEquality()
         {
             var mockTextInput = new Mock<TextInput>();
             var mockStreamReader = new Mock<IStreamReader>();
@@ -48,7 +49,7 @@ namespace CELTAPI.Tests.Services
             var sut = new SentimentService(mockStreamReader.Object, mockServerClient.Object);
             var result = await sut.CalculateSentimentFromText(mockTextInput.Object);
 
-            Assert.That(result, Is.EqualTo("Negative"));
+            Assert.That(result, Is.Not.EqualTo("Negative"));
         }
 
         [Test]
@@ -92,7 +93,7 @@ namespace CELTAPI.Tests.Services
             var sut = new SentimentService(mockStreamReader.Object, mockServerClient.Object);
             var result = await sut.CalculateSentimentFromTextFile(mockFormFile.Object);
 
-            Assert.That(result, Is.EqualTo("Negative"));
+            Assert.That(result, Is.Not.EqualTo("Negative"));
         }
     }
 }

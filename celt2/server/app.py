@@ -8,7 +8,7 @@ import nltk.data
 import subprocess
 
 # Boilerplate used from: https://flask.palletsprojects.com/en/2.0.x/quickstart/
-from server.model import classify
+from .model import classify
 # Define the Flask App
 app = Flask(__name__)
 nltk.download('punkt', quiet=True)

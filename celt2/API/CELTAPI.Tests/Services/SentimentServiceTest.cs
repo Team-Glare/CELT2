@@ -72,5 +72,27 @@ namespace CELTAPI.Tests.Services
 
             Assert.That(result, Is.EqualTo("Positive"));
         }
+
+        [Test]
+        public async Task CalculateSentimentFromTextFileInEquality()
+        {
+            var mockFormFile = new Mock<IFormFile>();
+            var mockStreamReader = new Mock<IStreamReader>();
+            var mockServerClient = new Mock<IServerClient>();
+
+            var mockResult = new SentimentResult
+            {
+                label = "Positive"
+            };
+
+            mockStreamReader.Setup(o => o.GetReader(mockFormFile.Object.OpenReadStream())).Returns(new StreamReader(new MemoryStream(Encoding.UTF8.GetBytes("This is a dummy file"))));
+
+            mockServerClient.Setup(o => o.PostAsync<SentimentResult, string>(It.IsAny<string>(), It.IsAny<string>())).ReturnsAsync(mockResult);
+
+            var sut = new SentimentService(mockStreamReader.Object, mockServerClient.Object);
+            var result = await sut.CalculateSentimentFromTextFile(mockFormFile.Object);
+
+            Assert.That(result, Is.EqualTo("Negative"));
+        }
     }
 }

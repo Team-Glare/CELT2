@@ -2,8 +2,7 @@
 # Copy python 3.6 base image from Docker repo: View images at https://hub.docker.com/_/python
 # This is a new feature as of Docker 17.05 called multi-stage builds
 # https://docs.docker.com/develop/develop-images/multistage-build/
-FROM openjdk:slim
-COPY --from=python:3.9-slim-bullseye / /
+FROM python:3.9-slim-bullseye
 
 # Set current working directory for future instructions: Documentation specifically only lists
 # RUN, CMD, ENTRYPOINT, COPY, and ADD. If the folder doesn't exist, it will be created.
@@ -14,15 +13,21 @@ WORKDIR /server
 # so really, the command equates to COPY requirements.txt /server/requirements.txt
 # Same for app.py, the server script
 COPY requirements.txt requirements.txt
+COPY model_requirements.txt model_requirements.txt
 COPY app.py app.py
 
 # When set to noninteractive, DEBIAN_FRONTEND disables
 # the (usually) required user inputs during installation.
 ARG DEBIAN_FRONTEND=noninteractive
 
-# Take each line in requirements.txt, find the package, and install the version listed.
-RUN pip install -r ./requirements.txt
+# A dependency requires GCC to install. This package installs that, amongst others. The -y flag has the same
+# functionality as the previous DEBIAN_FRONTEND arg, but sometimes it doesn't work for apt.
+RUN apt update && apt -y install build-essential
 
+# Take each line in requirements.txt, find the package, and install the version listed.
+RUN pip install -r ./requirements.txt 
+RUN pip install -r ./model_requirements.txt -f https://download.pytorch.org/whl/torch_stable.html
+ 
 # Specify that I want to run python upon starting the container
 ENTRYPOINT [ "python" ]
 

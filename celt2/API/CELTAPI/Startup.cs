@@ -60,6 +60,7 @@ namespace CELTAPI
 
             app.UseHttpsRedirection();
 
+            // Use the Swagger
             app.UseSwagger();
             app.UseSwaggerUI(c =>
             {

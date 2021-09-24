@@ -18,7 +18,7 @@ def hello_world():
     # Returns the entirety of the page; in this case, it is just the word "Test"
     return "<p>Test</p>"
 
-@app.route("/sentiment/text", methods = ['POST', 'GET'])
+@app.route("/sentiment/text", methods = ['POST'])
 def get_sentiment():
     print("Received request: " + str(request))
     model_path = "../model/model.py"
@@ -31,10 +31,11 @@ def get_sentiment():
     for sentence in parsed_sentences:
         process = subprocess.Popen(['python3', model_path, str(sentence)], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
         out, err = process.communicate()
-        print("Type of out: " + str(type(out)))
         out = out.decode("utf-8")
-        out = out.splitlines()[-1]
-        print("Out: " + str(out))
+        try:
+            out = out.splitlines()[-1]
+        except IndexError:
+            pass
         all_sentiments.append(str(out))
     print("Success, returning: " + str(all_sentiments))
     return json.dumps(all_sentiments)

@@ -8,7 +8,6 @@
 
 [![Build and deploy CELTAPI to Azure Web App](https://github.com/Team-Glare/CELT2/actions/workflows/CELTAPI_CI_CD.yml/badge.svg)](https://github.com/Team-Glare/CELT2/actions/workflows/CELTAPI_CI_CD.yml)
 
-Add zonedo doi badges as done in hw2b
 
 ## Introduction
 * [Linear.app Issues Board](https://linear.app/celt2/team/CEL/board)

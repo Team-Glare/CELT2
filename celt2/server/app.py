@@ -33,16 +33,24 @@ def get_sentiment():
     print("Parsed data: " + str(passed_data))
     parsed_sentences = tokenizer.tokenize(passed_data)
     print("Tokenized sentences: " + str(parsed_sentences))
-    all_sentiments = []
     print("Attempting to get sentiments from sentences...")
-    for sentence in parsed_sentences:
-        # process = subprocess.Popen(['python3', model_path, str(sentence)], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-        # out, err = process.communicate()
-        # out = out.decode("utf-8")
-        out = classify(sentence)
-        all_sentiments.append(str(out))
+
+    all_sentiments = []
+    # Currently, multiple sentences aren't supported by the API.
+    # The server can implement this with the following:
+    # for sentence in parsed_sentences:
+        # out = classify(sentence)
+        # all_sentiments.append(str(out))
+
+    # For now, we will be using a single sentence:
+    sentence = parsed_sentences[0]
+    out = classify(sentence)
+    # Reassigning all_sentiments here just to avoid having to rename
+    # later variables
+    all_sentiments = out
+
     print("Success, returning: " + str(all_sentiments))
-    return json.dumps(all_sentiments)
+    return json.dumps({'label': str(all_sentiments)})
 
 if __name__ == '__main__':
     app.run()

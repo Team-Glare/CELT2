@@ -2,19 +2,38 @@ body, #mainWrapper {
     font-size: 20px;
     background-color: rgb(245, 245, 245);
     margin-left: 5%;
-    margin-right: 5%; 
+    margin-right: 5%;
+    font-family:arial 
 }
 
 .large-textbox {
-    width: 30%;
-    height: 75px;
+    width: 400px;
+    height: 100px;
 }
 
-.red {
-    background-color: rgb(245, 100, 100);
+.careful {
+    background-color: rgb(245, 120, 120);
 }
 
 .submit {
-    background-color: rgb(100, 245, 100);
+    background-color: rgb(145, 180, 245);
     font-size: 20px;
+}
+
+.split {
+  height: 100%;
+  width: 50%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  overflow-x: hidden;
+  padding-top: 100px;
+}
+
+.left {
+    left: 5%;
+}
+
+.right {
+    right: 5%;
 }

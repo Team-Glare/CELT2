@@ -1,15 +1,18 @@
 import os
+import sys
 from flask import Flask
 from flask import request
 import json
 import random
 import nltk.data
 import subprocess
-# Boilerplate used from: https://flask.palletsprojects.com/en/2.0.x/quickstart/
 
+# Boilerplate used from: https://flask.palletsprojects.com/en/2.0.x/quickstart/
+sys.path.append((os.path.dirname(os.path.realpath(__file__))))
+from model.model import classify
 # Define the Flask App
 app = Flask(__name__)
-nltk.download('punkt')
+nltk.download('punkt', quiet=True)
 tokenizer = nltk.data.load('tokenizers/punkt/english.pickle')
 
 # Define route, "/" specifies the landing page.
@@ -29,13 +32,10 @@ def get_sentiment():
     all_sentiments = []
     print("Attempting to get sentiments from sentences...")
     for sentence in parsed_sentences:
-        process = subprocess.Popen(['python3', model_path, str(sentence)], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-        out, err = process.communicate()
-        out = out.decode("utf-8")
-        try:
-            out = out.splitlines()[-1]
-        except IndexError:
-            pass
+        # process = subprocess.Popen(['python3', model_path, str(sentence)], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        # out, err = process.communicate()
+        # out = out.decode("utf-8")
+        out = classify(sentence)
         all_sentiments.append(str(out))
     print("Success, returning: " + str(all_sentiments))
     return json.dumps(all_sentiments)

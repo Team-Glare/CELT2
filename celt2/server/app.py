@@ -6,9 +6,10 @@ import json
 import random
 import nltk.data
 import subprocess
-
+# Allows for access to model. The Dockerfile accounts for this.
+sys.path.append(os.path.dirname(os.path.dirname(os.path.realpath(__file__))))
+from model.model import classify
 # Boilerplate used from: https://flask.palletsprojects.com/en/2.0.x/quickstart/
-from .model import classify
 # Define the Flask App
 app = Flask(__name__)
 nltk.download('punkt', quiet=True)

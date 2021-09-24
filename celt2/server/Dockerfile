@@ -6,15 +6,15 @@ FROM python:3.9-slim-bullseye
 
 # Set current working directory for future instructions: Documentation specifically only lists
 # RUN, CMD, ENTRYPOINT, COPY, and ADD. If the folder doesn't exist, it will be created.
-WORKDIR /server
+WORKDIR /
+RUN touch __init__.py
 
 # COPY file from the first parameter to the second parameter
 # What isn't seen here is that the second requirements.txt has the WORKDIR behind it;
 # so really, the command equates to COPY requirements.txt /server/requirements.txt
 # Same for app.py, the server script
-COPY requirements.txt requirements.txt
-COPY model_requirements.txt model_requirements.txt
-COPY app.py app.py
+COPY model model
+COPY server server
 
 # When set to noninteractive, DEBIAN_FRONTEND disables
 # the (usually) required user inputs during installation.
@@ -25,8 +25,8 @@ ARG DEBIAN_FRONTEND=noninteractive
 RUN apt update && apt -y install gcc && apt -y install g++
 
 # Take each line in requirements.txt, find the package, and install the version listed.
-RUN pip install -r ./requirements.txt 
-RUN pip install -r ./model_requirements.txt -f https://download.pytorch.org/whl/lts/1.8/torch_lts.html
+RUN pip install -r /server/requirements.txt 
+RUN pip install -r /model/requirements.txt -f https://download.pytorch.org/whl/lts/1.8/torch_lts.html
 
 # Specify that I want to run python upon starting the container
 ENTRYPOINT [ "python" ]

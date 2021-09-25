@@ -1,3 +1,4 @@
+using CELTAPI.Model;
 using CELTAPI.Services;
 using CELTAPI.Utilities;
 using Microsoft.AspNetCore.Builder;
@@ -86,6 +87,9 @@ namespace CELTAPI
             // Helpers
             services.AddSingleton<IStreamReader, FileStreamReader>();
             services.AddScoped<IServerClient, ServerClient>();
+
+            // Models
+            services.AddScoped<ITextInput, TextInput>();
         }
     }
 }

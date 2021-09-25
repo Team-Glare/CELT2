@@ -2,9 +2,9 @@
 
 namespace CELTAPI.Model
 {
-    public class TextInput
+    public class TextInput : ITextInput
     {
         [Required]
-        public string SentimentText { get; set; }
+        public string sentimentText { get; set; }
     }
 }

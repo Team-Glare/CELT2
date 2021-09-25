@@ -87,9 +87,6 @@ namespace CELTAPI
             // Helpers
             services.AddSingleton<IStreamReader, FileStreamReader>();
             services.AddScoped<IServerClient, ServerClient>();
-
-            // Models
-            services.AddScoped<ITextInput, TextInput>();
         }
     }
 }

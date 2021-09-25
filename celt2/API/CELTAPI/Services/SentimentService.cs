@@ -10,13 +10,11 @@ namespace CELTAPI.Services
     {
         private readonly IStreamReader _reader;
         private readonly IServerClient _serverClient;
-        private readonly ITextInput _textInput;
 
-        public SentimentService(IStreamReader reader, IServerClient serverClient, ITextInput textInput)
+        public SentimentService(IStreamReader reader, IServerClient serverClient)
         {
             _reader = reader;
             _serverClient = serverClient;
-            _textInput = textInput;
         }
 
         public async Task<string> CalculateSentimentFromText(TextInput input)
@@ -29,13 +27,15 @@ namespace CELTAPI.Services
 
         public async Task<string> CalculateSentimentFromTextFile(IFormFile file)
         {
+            var input = new TextInput();
+
             using (StreamReader streamReader = _reader.GetReader(file.OpenReadStream()))
             {
-                _textInput.sentimentText = streamReader.ReadToEnd();
+                input.sentimentText = streamReader.ReadToEnd();
                 streamReader.Close();
             }
 
-            var result = await _serverClient.PostAsync<SentimentResult, TextInput>($"sentiment/text", (TextInput)_textInput);
+            var result = await _serverClient.PostAsync<SentimentResult, TextInput>($"sentiment/text", input);
 
             return result.label;
         }

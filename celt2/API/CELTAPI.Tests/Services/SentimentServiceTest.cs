@@ -24,9 +24,9 @@ namespace CELTAPI.Tests.Services
                 label = "Positive"
             };
 
-            mockServerClient.Setup(o => o.PostAsync<SentimentResult, ITextInput>(It.IsAny<string>(), It.IsAny<ITextInput>())).ReturnsAsync(mockResult);
+            mockServerClient.Setup(o => o.PostAsync<SentimentResult, TextInput>(It.IsAny<string>(), It.IsAny<TextInput>())).ReturnsAsync(mockResult);
 
-            var sut = new SentimentService(mockStreamReader.Object, mockServerClient.Object, mockTextInput.Object);
+            var sut = new SentimentService(mockStreamReader.Object, mockServerClient.Object);
             var result = await sut.CalculateSentimentFromText(mockTextInput.Object);
 
             Assert.That(result, Is.EqualTo("Positive"));
@@ -44,9 +44,9 @@ namespace CELTAPI.Tests.Services
                 label = "Positive"
             };
 
-            mockServerClient.Setup(o => o.PostAsync<SentimentResult, ITextInput>(It.IsAny<string>(), It.IsAny<ITextInput>())).ReturnsAsync(mockResult);
+            mockServerClient.Setup(o => o.PostAsync<SentimentResult, TextInput>(It.IsAny<string>(), It.IsAny<TextInput>())).ReturnsAsync(mockResult);
 
-            var sut = new SentimentService(mockStreamReader.Object, mockServerClient.Object, mockTextInput.Object);
+            var sut = new SentimentService(mockStreamReader.Object, mockServerClient.Object);
             var result = await sut.CalculateSentimentFromText(mockTextInput.Object);
 
             Assert.That(result, Is.Not.EqualTo("Negative"));
@@ -69,7 +69,7 @@ namespace CELTAPI.Tests.Services
 
             mockServerClient.Setup(o => o.PostAsync<SentimentResult, TextInput>(It.IsAny<string>(), It.IsAny<TextInput>())).ReturnsAsync(mockResult);
 
-            var sut = new SentimentService(mockStreamReader.Object, mockServerClient.Object, mockTextInput.Object);
+            var sut = new SentimentService(mockStreamReader.Object, mockServerClient.Object);
             var result = await sut.CalculateSentimentFromTextFile(mockFormFile.Object);
 
             Assert.That(result, Is.EqualTo("Positive"));
@@ -92,7 +92,7 @@ namespace CELTAPI.Tests.Services
 
             mockServerClient.Setup(o => o.PostAsync<SentimentResult, TextInput>(It.IsAny<string>(), It.IsAny<TextInput>())).ReturnsAsync(mockResult);
 
-            var sut = new SentimentService(mockStreamReader.Object, mockServerClient.Object, mockTextInput.Object);
+            var sut = new SentimentService(mockStreamReader.Object, mockServerClient.Object);
             var result = await sut.CalculateSentimentFromTextFile(mockFormFile.Object);
 
             Assert.That(result, Is.Not.EqualTo("Negative"));

@@ -16,7 +16,7 @@
 This project is licensed under the MIT License  
 
 ## How to Contribute?  
-Please take a look at our CONTRIBUTING.md where we provide instructions on contributing to the repo and help us in enhancing this analyzer.
+Please see our CONTRIBUTING.md for instructions on how to contribute to the repo and assist us in improving this analyzer.
 
 ## Version
 Initial release version 1.0.1

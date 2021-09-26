@@ -9,20 +9,20 @@
 [![Build and deploy CELTAPI to Azure Web App](https://github.com/Team-Glare/CELT2/actions/workflows/CELTAPI_CI_CD.yml/badge.svg)](https://github.com/Team-Glare/CELT2/actions/workflows/CELTAPI_CI_CD.yml)
 
 
-## Introduction
+## INTRODUCTION
 * [Linear.app Issues Board](https://linear.app/celt2/team/CEL/board)
 * [CELT2.0 Website](https://team-glare.github.io/CELT2/)
 
 
 ## Steps for execution
 
-## License
+## LICENSE
 This project is licensed under the MIT License  
 
 ## How to Contribute?  
 Please see our CONTRIBUTING.md for instructions on how to contribute to the repo and assist us in improving this analyzer.
 
-## Version
+## VERSION
 Initial release version 1.0.1
 
 ## Team Members

@@ -12,6 +12,10 @@
 ## Introduction
 * [Linear.app Issues Board](https://linear.app/celt2/team/CEL/board)
 * [CELT2.0 Website](https://team-glare.github.io/CELT2/)
+
+
+## Steps for execution
+
 ## License
 This project is licensed under the MIT License  
 

@@ -1,9 +1,9 @@
-deploy on a server instead of locally
+Deploy on a server instead of locally
 
-easier install process
+Easier install process
 
-new input? audio from video
+New input - audio from video
 
-possibly allow comparisons of 2+ inputs
+Possibly allow comparisons of 2+ inputs
 
-line by line analysis
+Line by line analysis

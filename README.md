@@ -23,6 +23,29 @@ Sentiment analysis is among the most rapidly increasing research areas in comput
 
 ## Steps for execution
 
+<img width="882" alt="Capture1" src="https://user-images.githubusercontent.com/89327790/134822122-aabc6591-3c7f-4d4d-b4d2-991f6e4d6684.PNG">
+
+
+
+
+An example of the analysis of a negative sample text:
+
+<img width="899" alt="Capture2" src="https://user-images.githubusercontent.com/89327790/134822124-47256bc3-1985-4207-a1cd-1b6f21b8c337.PNG">
+
+
+
+
+An example of the analysis of a positive sample text:
+
+<img width="872" alt="Capture3" src="https://user-images.githubusercontent.com/89327790/134822125-24560298-1977-47b6-870d-3306d162e048.PNG">
+
+
+
+
+An example of the analysis of an uploaded file:
+<img width="920" alt="Capture4" src="https://user-images.githubusercontent.com/89327790/134822127-522b4c64-2319-4f0e-a444-17debe948e2c.PNG">
+
+
 ## LICENSE
 This project is licensed under the MIT License  
 

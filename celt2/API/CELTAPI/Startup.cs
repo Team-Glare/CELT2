@@ -1,3 +1,4 @@
+using CELTAPI.Model;
 using CELTAPI.Services;
 using CELTAPI.Utilities;
 using Microsoft.AspNetCore.Builder;

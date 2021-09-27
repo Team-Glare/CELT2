@@ -24,7 +24,7 @@ namespace CELTAPI.Tests.Services
                 label = "Positive"
             };
 
-            mockServerClient.Setup(o => o.PostAsync<SentimentResult, string>(It.IsAny<string>(), It.IsAny<string>())).ReturnsAsync(mockResult);
+            mockServerClient.Setup(o => o.PostAsync<SentimentResult, TextInput>(It.IsAny<string>(), It.IsAny<TextInput>())).ReturnsAsync(mockResult);
 
             var sut = new SentimentService(mockStreamReader.Object, mockServerClient.Object);
             var result = await sut.CalculateSentimentFromText(mockTextInput.Object);
@@ -44,7 +44,7 @@ namespace CELTAPI.Tests.Services
                 label = "Positive"
             };
 
-            mockServerClient.Setup(o => o.PostAsync<SentimentResult, string>(It.IsAny<string>(), It.IsAny<string>())).ReturnsAsync(mockResult);
+            mockServerClient.Setup(o => o.PostAsync<SentimentResult, TextInput>(It.IsAny<string>(), It.IsAny<TextInput>())).ReturnsAsync(mockResult);
 
             var sut = new SentimentService(mockStreamReader.Object, mockServerClient.Object);
             var result = await sut.CalculateSentimentFromText(mockTextInput.Object);
@@ -56,6 +56,7 @@ namespace CELTAPI.Tests.Services
         public async Task CalculateSentimentFromTextFileEquality()
         {
             var mockFormFile = new Mock<IFormFile>();
+            var mockTextInput = new Mock<TextInput>();
             var mockStreamReader = new Mock<IStreamReader>();
             var mockServerClient = new Mock<IServerClient>();
 
@@ -66,7 +67,7 @@ namespace CELTAPI.Tests.Services
 
             mockStreamReader.Setup(o => o.GetReader(mockFormFile.Object.OpenReadStream())).Returns(new StreamReader(new MemoryStream(Encoding.UTF8.GetBytes("This is a dummy file"))));
 
-            mockServerClient.Setup(o => o.PostAsync<SentimentResult, string>(It.IsAny<string>(), It.IsAny<string>())).ReturnsAsync(mockResult);
+            mockServerClient.Setup(o => o.PostAsync<SentimentResult, TextInput>(It.IsAny<string>(), It.IsAny<TextInput>())).ReturnsAsync(mockResult);
 
             var sut = new SentimentService(mockStreamReader.Object, mockServerClient.Object);
             var result = await sut.CalculateSentimentFromTextFile(mockFormFile.Object);
@@ -78,6 +79,7 @@ namespace CELTAPI.Tests.Services
         public async Task CalculateSentimentFromTextFileInEquality()
         {
             var mockFormFile = new Mock<IFormFile>();
+            var mockTextInput = new Mock<TextInput>();
             var mockStreamReader = new Mock<IStreamReader>();
             var mockServerClient = new Mock<IServerClient>();
 
@@ -88,7 +90,7 @@ namespace CELTAPI.Tests.Services
 
             mockStreamReader.Setup(o => o.GetReader(mockFormFile.Object.OpenReadStream())).Returns(new StreamReader(new MemoryStream(Encoding.UTF8.GetBytes("This is a dummy file"))));
 
-            mockServerClient.Setup(o => o.PostAsync<SentimentResult, string>(It.IsAny<string>(), It.IsAny<string>())).ReturnsAsync(mockResult);
+            mockServerClient.Setup(o => o.PostAsync<SentimentResult, TextInput>(It.IsAny<string>(), It.IsAny<TextInput>())).ReturnsAsync(mockResult);
 
             var sut = new SentimentService(mockStreamReader.Object, mockServerClient.Object);
             var result = await sut.CalculateSentimentFromTextFile(mockFormFile.Object);

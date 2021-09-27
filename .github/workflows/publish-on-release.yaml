@@ -1,4 +1,4 @@
-name: Build and publish to Digital Ocean manually
+name: Build and Publish Server to Digital Ocean
 
 on:
   workflow_dispatch:

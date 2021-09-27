@@ -1,14 +1,8 @@
 # CELT2.0: Sentiment Analyzer  
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) [![GitHub issues](https://img.shields.io/github/issues/Team-Glare/CELT2)](https://github.com/Team-Glare/CELT2/issues)  
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) [![GitHub issues](https://img.shields.io/github/issues/Team-Glare/CELT2)](https://github.com/Team-Glare/CELT2/issues)  [![codecov](https://img.shields.io/badge/codecov-100%25-brightgreen)](https://codecov.io/gh/Team-Glare/CELT2) [![DOI](https://zenodo.org/badge/403367995.svg)](https://zenodo.org/badge/latestdoi/403367995) 
 
-[![codecov](https://img.shields.io/badge/codecov-100%25-brightgreen)](https://codecov.io/gh/Team-Glare/CELT2)
-
-[![DOI](https://zenodo.org/badge/403367995.svg)](https://zenodo.org/badge/latestdoi/403367995) 
-
-[![Build and Publish CELTAPI to Azure Web App](https://github.com/Team-Glare/CELT2/actions/workflows/CELTAPI_CI_CD.yml/badge.svg)](https://github.com/Team-Glare/CELT2/actions/workflows/CELTAPI_CI_CD.yml)
-
-[![Build and Publish Server to Digital Ocean](https://github.com/Team-Glare/CELT2/actions/workflows/publish-on-release.yaml/badge.svg)](https://github.com/Team-Glare/CELT2/actions/workflows/publish-on-release.yaml)
+[![Build and Publish CELTAPI to Azure Web App](https://github.com/Team-Glare/CELT2/actions/workflows/CELTAPI_CI_CD.yml/badge.svg)](https://github.com/Team-Glare/CELT2/actions/workflows/CELTAPI_CI_CD.yml) [![Build and Publish Server to Digital Ocean](https://github.com/Team-Glare/CELT2/actions/workflows/publish-on-release.yaml/badge.svg)](https://github.com/Team-Glare/CELT2/actions/workflows/publish-on-release.yaml)
 
 
 ## INTRODUCTION

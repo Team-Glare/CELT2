@@ -31,8 +31,8 @@ def get_sentiment():
     model_path = "../model/model.py"
     passed_data = request.get_json()['sentimentText']
     print("Parsed data: " + str(passed_data))
-    parsed_sentences = tokenizer.tokenize(passed_data)
-    print("Tokenized sentences: " + str(parsed_sentences))
+    # parsed_sentences = tokenizer.tokenize(passed_data)
+    # print("Tokenized sentences: " + str(parsed_sentences))
     print("Attempting to get sentiments from sentences...")
 
     all_sentiments = []
@@ -43,7 +43,7 @@ def get_sentiment():
         # all_sentiments.append(str(out))
 
     # For now, we will be using a single sentence:
-    sentence = parsed_sentences[0]
+    sentence = passed_data
     out = classify(sentence)
     # Reassigning all_sentiments here just to avoid having to rename
     # later variables

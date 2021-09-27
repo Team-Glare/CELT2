@@ -2,14 +2,13 @@ var apiBaseUrl = 'https://celtapi.azurewebsites.net/';
 
 function analyzeFile() {
 
-    loadingResults();
-
     var file = document.getElementById("file");
-
     if (file.files.length == 0) {
         window.alert("Choose file to analyze");
         return;
     }
+
+    loadingResults();
 
     var formData = new FormData();
     formData.append('file', file.files[0]);
@@ -35,14 +34,13 @@ function analyzeFile() {
 
 function analyzeText() {
 
-    loadingResults();
-
     var text = document.getElementById("text");
-
     if (text.value.length == 0) {
         window.alert("Enter text to analyze");
         return;
     }
+
+    loadingResults();
 
     $.ajax({
         type: "POST",
@@ -65,6 +63,7 @@ function analyzeText() {
 
 function loadingResults() {
     document.getElementById("result").text = "";
+    document.getElementById("results").style.display = "none";
     document.getElementById("loader").style.display = "block";
 }
 

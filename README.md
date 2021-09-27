@@ -55,7 +55,7 @@ This project is licensed under the MIT License
 Please see our CONTRIBUTING.md for instructions on how to contribute to the repo and assist us in improving this analyzer.
 
 ## VERSION
-Initial release version 1.0.1
+Initial release version 1.0.0
 
 ## Team Members
 * [Setu Kumar Basak](https://github.com/setu1421)  

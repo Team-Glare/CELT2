@@ -1,6 +1,9 @@
 var apiBaseUrl = 'https://celtapi.azurewebsites.net/';
 
 function analyzeFile() {
+
+    loadingResults();
+
     var file = document.getElementById("file");
 
     if (file.files.length == 0) {
@@ -20,14 +23,20 @@ function analyzeFile() {
         crossDomain: true,
         success: function(response) {
             $("#result").text(response);
+            loadedResults();
         },
         error: function(err) {
             console.log("error= " + err);
+            $("#result").text("Could not load results");
+            loadedResults();
         },
     });
 }
 
 function analyzeText() {
+
+    loadingResults();
+
     var text = document.getElementById("text");
 
     if (text.value.length == 0) {
@@ -44,11 +53,24 @@ function analyzeText() {
         cache: false,
         success: function(response) {
             $("#result").text(response);
+            loadedResults();
         },
         error: function(err) {
             console.log("error= " + err);
+            $("#result").text("Could not load results");
+            loadedResults();
         },
     });
+}
+
+function loadingResults() {
+    document.getElementById("result").text = "";
+    document.getElementById("loader").style.display = "block";
+}
+
+function loadedResults() {
+    document.getElementById("loader").style.display = "none";
+    document.getElementById("results").style.display = "block";
 }
 
 function clearFile() {

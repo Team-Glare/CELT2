@@ -1,5 +1,6 @@
 <!DOCTYPE HTML>
 <head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>CELT2.0 Sentiment Analyzer</title>
 <link rel="stylesheet" href="./celt2/frontend/css/app.css">
 </head>
@@ -22,16 +23,18 @@
             <br>
             <textarea id="text" name="text" class="large-textbox"></textarea>
             <br><br>
-            <button id="analyze" class="submit" onclick="analyzeText()" name="analyze">Analyze Text</button>
+            <button id="analyze" class="submit" onclick="tempAnalyze()" name="analyze">Analyze Text</button>
         </div>
     </div>
     <br><br>
+    <div id="loader" class="loader" style="display:none">
+        
+    </div>
     <div class="split right">
         <h2>Results:</h2>
-        <div>
+        <div id="results" class="animate-bottom" style="display:none">
             <label id="result"></label>
         </div> 
-        
     </div>
     
 

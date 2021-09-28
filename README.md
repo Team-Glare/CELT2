@@ -9,6 +9,37 @@
 
 Sentiment analysis is among the most rapidly increasing research areas in computer science. It is usually quite difficult to keep up with all of the development taking place in the area. By analyzing the data provided in different methods, we expect to achieve our goal of accurately predicting a user's sentiment in our project. Although it is still in its early phases of development, this project has the potential for application to a variety of sectors that could be beneficial to society. This report offers users a broad overview of the project, allowing individuals to understand it as open-source software and add improvements. The report also helps developers in comprehending the code and serves as a starting point for the project. 
 
+The following technologies were used to complete the development, and it is recommended that the next group of developers who take on this project have these technologies installed and running before proceeding: 
+1. FrontEnd:
+
+
+    a. HTML
+    
+    
+    b. CSS
+    
+    
+    c. Javascript
+
+
+
+2. API:
+
+
+    a. ASP.NET Core Web API 3.1
+    
+    
+    b. Nunit and Moq (Test Framework)
+
+3. Server:
+    
+
+4. Model:
+   
+
+Although we have used HTML and CSS for the FrontEnd, the users can merge the backend logic with any of the front-end frameworks they wish to use such as React, angularJS, etc.
+
+
 
 ## Linear Board
 * [Linear.app Issues Board](https://linear.app/celt2/team/CEL/board)

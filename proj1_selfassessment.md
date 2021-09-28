@@ -1,19 +1,19 @@
 | Notes|Self Assessment  zero (none), one (a litte), two (somewhat), three (a lot)| Evidence|
 |-----|--------|---------|
 |workload is spread over the whole team (one team member is often Xtimes more productive than the others... 
-but nevertheless, here is a track record that everyone is contributing a lot)||evidence  in GH|
-| Number of commits||in GH|
-| Number of commits: by different people||in GH|
-| Issues reports: there are *many*| | |
-|  issues are being  closed| |evidence in GH|
-| DOI badge: exists | |in GH|
-|Docs: doco generated , format not ugly | |in GH|
-|Docs: what: point descriptions of each class/function (in isolation) | | |
+but nevertheless, here is a track record that everyone is contributing a lot)|3|evidence  in GH|
+| Number of commits|3|in GH|
+| Number of commits: by different people|3|in GH|
+| Issues reports: there are *many*|3|in GH |
+|  issues are being  closed|3 |evidence in GH|
+| DOI badge: exists |3 |in GH|
+|Docs: doco generated , format not ugly |3 |in GH|
+|Docs: what: point descriptions of each class/function (in isolation) | |in GH |
 |Docs: how: for common use cases X,Y,Z mini-tutorials showing worked examples on how to do X,Y,Z| |doc page entries|
 |Docs: why: docs tell a story, motivate the whole thing, deliver a punchline that makes you want to rush out and use the thing| | |
 |Docs: short video, animated, hosted on your repo. That convinces people why they want to work on your code.| | |
 | Use of version control tools| | |
-|Use of  style checkers | |config files in GH showing your config| 
+|Use of  style checkers |2 |config files in GH showing your config| 
 | Use of code  formatters. | |config files in GH showing your this formatter's  config|
 | Use of syntax checkers| |config files iin  GH showing this checker's config|
 | Use of code coverage | |config files in GH|

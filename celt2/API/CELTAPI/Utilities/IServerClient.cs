@@ -2,6 +2,9 @@
 
 namespace CELTAPI.Utilities
 {
+    /// <summary>
+    /// Interface for server client.
+    /// </summary>
     public interface IServerClient
     {
         Task<TResult> GetAsync<TResult>(string relativeUrl);

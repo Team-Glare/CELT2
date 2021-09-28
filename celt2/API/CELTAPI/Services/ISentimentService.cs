@@ -4,6 +4,9 @@ using System.Threading.Tasks;
 
 namespace CELTAPI.Services
 {
+    /// <summary>
+    /// Interface for sentiment service which calculates sentiments.
+    /// </summary>
     public interface ISentimentService
     {
         Task<string> CalculateSentimentFromText(TextInput input);

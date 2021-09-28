@@ -12,8 +12,15 @@ using System;
 
 namespace CELTAPI
 {
+    /// <summary>
+    /// Defines the Startup class for the project.
+    /// </summary>
     public class Startup
     {
+        /// <summary>
+        /// Constructor for Startup with injected dependencies.
+        /// </summary>
+        /// <param name="configuration">IConfiguration input.</param>
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -21,7 +28,10 @@ namespace CELTAPI
 
         public IConfiguration Configuration { get; }
 
-        // This method gets called by the runtime. Use this method to add services to the container.
+        /// <summary>
+        /// Gets called by the runtime and uses this method to add services to the container.
+        /// </summary>
+        /// <param name="services">IServiceCollection input.</param>
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
@@ -51,7 +61,11 @@ namespace CELTAPI
             DependencyInjections(services);
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+        /// <summary>
+        /// Gets called by the runtime and uses this method to configure the HTTP request pipeline.
+        /// </summary>
+        /// <param name="app">IApplicationBuilder</param>
+        /// <param name="env">IWebHostEnvironment</param>
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
@@ -79,6 +93,10 @@ namespace CELTAPI
             });
         }
 
+        /// <summary>
+        /// Adds the dependency injections.
+        /// </summary>
+        /// <param name="services">IServiceCollection</param>
         private void DependencyInjections(IServiceCollection services)
         {
             // Services

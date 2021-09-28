@@ -10,8 +10,14 @@ using System.Threading.Tasks;
 
 namespace CELTAPI.Tests.Services
 {
+    /// <summary>
+    /// Test class for sentiment service.
+    /// </summary>
     public class SentimentServiceShould
     {
+        /// <summary>
+        /// Tests for sentiment positive equality from plain text.
+        /// </summary>
         [Test]
         public async Task CalculateSentimentFromTextEquality()
         {
@@ -32,6 +38,9 @@ namespace CELTAPI.Tests.Services
             Assert.That(result, Is.EqualTo("Positive"));
         }
 
+        /// <summary>
+        /// Tests for sentiment positive in equality from plain text.
+        /// </summary>
         [Test]
         public async Task CalculateSentimentFromTextInEquality()
         {
@@ -52,6 +61,9 @@ namespace CELTAPI.Tests.Services
             Assert.That(result, Is.Not.EqualTo("Negative"));
         }
 
+        /// <summary>
+        /// Tests for sentiment positive equality from text file.
+        /// </summary>
         [Test]
         public async Task CalculateSentimentFromTextFileEquality()
         {
@@ -75,6 +87,9 @@ namespace CELTAPI.Tests.Services
             Assert.That(result, Is.EqualTo("Positive"));
         }
 
+        /// <summary>
+        /// Tests for sentiment positive in equality from text file.
+        /// </summary>
         [Test]
         public async Task CalculateSentimentFromTextFileInEquality()
         {

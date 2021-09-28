@@ -42,6 +42,13 @@ An example of the analysis of an uploaded file:
 <img width="920" alt="Capture4" src="https://user-images.githubusercontent.com/89327790/134822127-522b4c64-2319-4f0e-a444-17debe948e2c.PNG">
 
 
+
+## FUTURE SCOPE
+
+
+
+
+
 ## LICENSE
 This project is licensed under the MIT License  
 

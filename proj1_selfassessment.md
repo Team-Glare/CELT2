@@ -4,30 +4,30 @@
 | Number of commits|3|in GH|
 | Number of commits: by different people|3|in GH|
 | Issues reports: there are *many*|3|in GH |
-|  issues are being  closed|3 |evidence in GH|
+|  issues are being  closed|3 | in GH|
 | DOI badge: exists |3 |in GH|
 |Docs: doco generated , format not ugly |3 |in GH|
-|Docs: what: point descriptions of each class/function (in isolation) | |in GH |
-|Docs: how: for common use cases X,Y,Z mini-tutorials showing worked examples on how to do X,Y,Z| |doc page entries|
-|Docs: why: docs tell a story, motivate the whole thing, deliver a punchline that makes you want to rush out and use the thing| | |
-|Docs: short video, animated, hosted on your repo. That convinces people why they want to work on your code.| | |
-| Use of version control tools| | |
-|Use of  style checkers | |Used IDE checkers| 
-| Use of code  formatters | |Used IDE formatters|
-| Use of syntax checkers| |config files in  GH showing this checker's config|
-| Use of code coverage |3|in GH|
+|Docs: what: point descriptions of each class/function (in isolation) | 3 | in software documentation |
+|Docs: how: for common use cases X,Y,Z mini-tutorials showing worked examples on how to do X,Y,Z| 3 |in software documentation|
+|Docs: why: docs tell a story, motivate the whole thing, deliver a punchline that makes you want to rush out and use the thing| 3 | README.md and in software documentation |
+|Docs: short video, animated, hosted on your repo. That convinces people why they want to work on your code.| 3 | on README.md |
+| Use of version control tools| 3 | use of Git |
+|Use of  style checkers | 1 |Used IDE checkers| 
+| Use of code  formatters | 1 |Used IDE formatters|
+| Use of syntax checkers| 0 | |
+| Use of code coverage | 3 |in GH|
 | other automated analysis tools|0| |
 | test cases exist|3|dozens of tests and those test cases are more than 30% of the  code base|
 | test cases are routinely executed|3|github actions|
  | the files CONTRIBUTING.md lists coding standards and lots of tips on how to extend the system without screwing things up|3 |in GH |
 | issues are discussed before they are closed|3 |In issue comments|
 | Chat channel: exists|3|Discord|
-| test cases:.a large proportion of the issues related to handling failing cases.| |if a test case fails, open an issue and fix it|
-| evidence that the whole team is using the same tools: everyone can get to all tools and files| | |
-| evidence that the whole team is using the same tools (e.g. config files in the repo, updated by lots of different people)| | |
-| evidence that the whole team is using the same tools (e.g. tutor can ask anyone to share screen, they demonstrate the system running on their computer)| | |
-| evidence that the members of the team are working across multiple places in the code base| | |
-|short release cycles |  |(hard to see in short projects) project members are committing often enough so that everyone can get your work|
+| test cases:.a large proportion of the issues related to handling failing cases.| 0 | |
+| evidence that the whole team is using the same tools: everyone can get to all tools and files| 2 | Instructions for access to tools is shown in setup guide |
+| evidence that the whole team is using the same tools (e.g. config files in the repo, updated by lots of different people)| 0 |  |
+| evidence that the whole team is using the same tools (e.g. tutor can ask anyone to share screen, they demonstrate the system running on their computer)| 3 | Anyone can demonstrate the system running |
+| evidence that the members of the team are working across multiple places in the code base| 3 | in GH commits |
+|short release cycles | 3 | Frequent commits, deployed on every commit |
 |Software: Does your website and documentation provide a clear, high-level overview of your software?| | |
 |Software: Does your website and documentation clearly describe the type of user who should use your software?| | |
 |Software: Do you publish case studies to show how your software has been used by yourself and others?| | |

@@ -38,6 +38,15 @@ The following technologies were used to complete the development, and it is reco
 
 4. Model:
    
+   
+   a. Flair
+   
+   
+   
+   b. Torch
+
+
+
 
 Although we have used HTML and CSS for the FrontEnd, the users can merge the backend logic with any of the front-end frameworks they wish to use such as React, angularJS, etc.
 

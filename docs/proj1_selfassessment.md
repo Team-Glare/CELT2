@@ -75,7 +75,7 @@
 |Test your software: Do you have a framework to periodically (e.g. nightly) run your tests on the latest version of the source code?| 0 | |
 |Test your software: Do you use continuous integration, automatically running tests whenever changes are made to your source code?| 3 | |
 |Test your software: Are your test results publicly visible?| 3 | codecov etc.|
-|Test your software: Are all manually-run tests documented?| n/a | |
+|Test your software: Are all manually-run tests documented?| 0 | |
 |Engage with your community: Does your project have resources (e.g. blog, Twitter, RSS feed, Facebook page, wiki, mailing list) that are regularly updated with information about your software?|0||
 |Engage with your community: Does your website state how many projects and users are associated with your project?|1||
 |Engage with your community: Do you provide success stories on your website? |0||

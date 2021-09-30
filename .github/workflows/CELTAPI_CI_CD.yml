@@ -41,7 +41,7 @@ jobs:
       with:
         token: ${{secrets.CODECOV_TOKEN}}
         file: coverage.opencover.xml
-        directory: CELTAPI.Tests    
+        directory: API/CELTAPI.Tests    
 
     - name: dotnet publish
       run: dotnet publish ${{env.SOLUTIONPATH}} -c Release -o ${{env.DOTNET_ROOT}}/myapp

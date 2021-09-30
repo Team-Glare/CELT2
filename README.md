@@ -23,6 +23,8 @@ The following technologies were used to complete the development, and it is reco
   * ASP.NET Core Web API 3.1
   * Nunit and Moq (Test Framework)
 * Server
+  * Flask Server & Dockerfile for Containerization
+  * Pytest (Test Framework)
 * Model
   * Flair
   * Torch

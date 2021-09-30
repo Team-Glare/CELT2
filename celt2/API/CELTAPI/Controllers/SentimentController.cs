@@ -35,7 +35,7 @@ namespace CELTAPI.Controllers
         /// Endpoint for calculating sentiment from plain text.
         /// </summary>
         /// <param name="input">The plain text input.</param>
-        /// <returns>The calculated sentiment label with cumalative probability.</returns>
+        /// <returns>The calculated sentiment label with cumulative probability.</returns>
         [HttpPost]
         [Route("text")]
         public async Task<string> GenerateSentimentFromText(TextInput input)
@@ -49,7 +49,7 @@ namespace CELTAPI.Controllers
         /// Endpoint for calculating sentiment from text file.
         /// </summary>
         /// <param name="file">The input text file.</param>
-        /// <returns>The calculated sentiment label with cumalative probability.</returns>
+        /// <returns>The calculated sentiment label with cumulative probability.</returns>
         [HttpPost]
         [Route("text/file")]
         public async Task<string> GenerateSentimentFromFile(IFormFile file)

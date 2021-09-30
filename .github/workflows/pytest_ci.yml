@@ -25,9 +25,8 @@ jobs:
         python -m pip install --upgrade pip
         pip install flake8 pytest pytest-cov coverage
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-        echo '$GITHUB_WORKSPACE'
-        chmod +x $GITHUB_WORKSPACE/setup.sh
-        chmod +x $GITHUB_WORKSPACE/celt2/api/setup.sh
+        chmod +x ./setup.sh
+        chmod +x ./celt2/API/setup.sh
         ./setup.sh
     - name: Lint with flake8
       run: |
@@ -37,8 +36,8 @@ jobs:
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
     - name: Test with pytest, upload to codecov
       run: |
-        pytest --cov-report xml:cov.xml --cov=glare/tests ./celt2/server/
+        pytest --cov-report=xml --cov=./ ./celt2/server
     - name: "Upload coverage to Codecov"
-      uses: codecov/codecov-action@v1
+      uses: codecov/codecov-action@v2
       with:
         fail_ci_if_error: true

@@ -9,6 +9,11 @@
  * @file   This files handles all frontend functionality for the Sentiment Analyzer
  * @author Matthew Sohacki
  * @since  1.0.1
+ * @license
+ *   Copyright Team Glare. All Rights Reserved.
+ *
+ *   Use of this source code is governed by an MIT-style license that can be
+ *   found in the LICENSE file at https://github.com/Team-Glare/CELT2/blob/main/LICENSE
  */
 
 /* URL to send API requests to */

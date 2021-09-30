@@ -7,6 +7,8 @@ on:
   push:
     branches:
       - main
+    paths:
+     - 'celt2/API/**'
 
 jobs:
   build:

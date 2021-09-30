@@ -79,7 +79,10 @@ Core functionality to be added:
 * Video and audio file analysis
 * Sentiment comparison of 2+ inputs
 * Optionally show line by line analysis
+* Create a separate DEV server for code integration.
+* Add integration tests.
 * Implement style and code checkers
+* Allow server/model to analyze larger amounts of data
 
 
 ## LICENSE

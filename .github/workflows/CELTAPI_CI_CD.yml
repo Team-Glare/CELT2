@@ -7,8 +7,6 @@ on:
   push:
     branches:
       - main
-    paths:
-     - 'celt2/API/**'
 
 jobs:
   build:
@@ -41,7 +39,9 @@ jobs:
       with:
         token: ${{secrets.CODECOV_TOKEN}}
         file: coverage.opencover.xml
-        directory: API/CELTAPI.Tests    
+        directory: celt2/API/CELTAPI.Tests
+        fail_ci_if_error: true
+        verbose: true
 
     - name: dotnet publish
       run: dotnet publish ${{env.SOLUTIONPATH}} -c Release -o ${{env.DOTNET_ROOT}}/myapp

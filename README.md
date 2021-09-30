@@ -1,3 +1,4 @@
+
 # CELT2.0: Sentiment Analyzer  
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) [![GitHub issues](https://img.shields.io/github/issues/Team-Glare/CELT2)](https://github.com/Team-Glare/CELT2/issues)  [![codecov](https://img.shields.io/badge/codecov-100%25-brightgreen)](https://codecov.io/gh/Team-Glare/CELT2)
@@ -30,6 +31,22 @@ The following technologies were used to complete the development, and it is reco
   * Torch
 
 Although we have used HTML and CSS for the FrontEnd, the users can merge the backend logic with any of the front-end frameworks they wish to use such as React, angularJS, etc.
+
+
+![CELT2.0 Architecture](https://user-images.githubusercontent.com/8182937/135469169-44d400b6-ff5f-481b-8a23-d3965c8d6cb2.png)
+
+In our repo, we have separate directories of frontend, API, server, and model.
+
+* Frontend: If any code is committed into the frontend directory, then the frontend gets published to GitHub pages using the Github actions. Our published frontend URL: https://team-glare.github.io/CELT2/
+* API: If any code is committed into the API directory, then the API gets published to Azure Webapp using the Github actions. Our published API URL: https://celtapi.azurewebsites.net/
+* Model & Server: If any code is committed into the model and server directory, then the model & server gets published to Digital Ocean using the Github actions.
+
+The advantages of CELT2.0 architecture:
+* Easily maintainable.
+* Can be easily swapped out any submodule with a different module.
+* Each sub-module can be tested separately.
+* Each sub-module change can be published separately.
+
 
 
 ## WEBSITE
@@ -74,6 +91,7 @@ Strongly recommended:
 Dependencies:
 * Within the context of the root folder, run ```setup.sh```. This will acquire the requirements from the API, Model, and Server, and download them for you from the appropriate sources.
 
+
 Running the Server:
 * Locally:
     * Within the server subdirectory, you can run ```./boot_dockerless.sh```, which will run Flask for you (after checking all of the require depedencies exist). This will only allow for local connections and testing.
@@ -83,6 +101,16 @@ Running the Server:
     * Ensure that the latest version of your code is pushed to GitHub. Go to the ```Actions tab```, and select ```Build and Publish Server to Digital Ocean```. Click ```Run Workflow```, and specify a version number. After some time, this will deploy an image to the Digital Ocean Images storage.
     * After this, enter the ```Apps tab```, create an App, and set the run command ```gunicorn --worker-tmp-dir /dev/shm --chdir ./server app:app```. Once the app is deployed, the server should be available at an external link, viewable at the top of the dashboard.
 
+Running the API:
+* Locally:
+    * If you have run the ```setup.sh``` above, then the API will be listening on 'https://localhost:5001'.
+    * You can run it manually as well by moving into the subdirectory API/CELTAPI and run this command `dotnet run CELTAPI.csproj`
+
+Running the Frontend:
+* Locally:
+	* In the ```main.js``` file, replace the ```apiBaseURL``` with the above API url.
+	* Open the ```index.html``` file to access the main page. 
+
 
 ## INSPIRATION AND IMPROVEMENTS
 
@@ -91,7 +119,7 @@ Our Sentiment Analyzer is based on work done by a previous group:
 
 The central function of our sentiment analyzer is similar, and the inputs that are supported in Phase 1 are available in the original Sentiment Analyzer.
 
-CELT2.0 offers certain improvmenets over the original that make it easier to use and develop:
+CELT2.0 offers certain improvements over the original that make it easier to use and develop:
 * Deployed on a server instead of locally
 * Easier install process - central setup script setup.sh
 * Line by line analysis - unfinished but supported by the analyzer 

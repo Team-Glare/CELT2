@@ -19,7 +19,7 @@ using System.Threading.Tasks;
 namespace CELTAPI.Tests.Services
 {
     /// <summary>
-    /// Test class for sentiment service.
+    /// Test class for sentiment services.
     /// </summary>
     public class SentimentServiceShould
     {

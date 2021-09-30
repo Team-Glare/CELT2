@@ -1,3 +1,11 @@
+#
+# @license
+# Copyright Team Glare. All Rights Reserved.
+#
+# Use of this source code is governed by an MIT-style license that can be
+# found in the LICENSE file at https://github.com/Team-Glare/CELT2/blob/main/LICENSE
+#
+
 # Import openjdk image for sentiment analysis usage
 # Copy python 3.6 base image from Docker repo: View images at https://hub.docker.com/_/python
 # This is a new feature as of Docker 17.05 called multi-stage builds

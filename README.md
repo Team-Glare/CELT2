@@ -60,6 +60,29 @@ An example of the analysis of a positive sample text:
 An example of the analysis of an uploaded file:
 <img width="920" alt="Capture4" src="https://user-images.githubusercontent.com/89327790/134822127-522b4c64-2319-4f0e-a444-17debe948e2c.PNG">
 
+## Setup
+
+Prerequisites:
+* .NET >= 5.0
+* Docker >= 20.10.7
+* Python >= 3.8
+* pip >= 20.0.2
+
+Strongly recommended:
+* Environment capable of using a UNIX-based terminal - Ubuntu, macOS, WSL/2, etc.
+
+Dependencies:
+* Within the context of the root folder, run setup.sh. This will acquire the requirements from the API, Model, and Server, and download them for you from the appropriate sources.
+
+Running the Server:
+* Locally:
+    * Within the server subdirectory, you can run ./boot_dockerless.sh, which will run flask for you (after checking all of the require depedencies exist). This will only allow for local connections and testing.
+* Containerized:
+    * We assume that you are using Digital Ocean for the sake of these steps - we highly encourage this, as Digital Ocean provides students $100 credit through the GitHub students program. 
+    * Ensure that the latest version of your code is pushed to GitHub. Go to the Actions tab, and select Build and Publish Server to Digital Ocean. Click Run Workflow, and specify a version number. After some time, this will deploy an image to the Digital Ocean Images storage.
+    * After this, enter the Apps tab, create an App, and set the run command gunicorn --worker-tmp-dir /dev/shm --chdir ./server app:app. Once the app is deployed, the server should be available at an external link, viewable at the top of the dashboard.
+
+
 ## INSPIRATION AND IMPROVEMENTS
 
 Our Sentiment Analyzer is based on work done by a previous group:

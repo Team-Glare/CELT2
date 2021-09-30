@@ -1,4 +1,12 @@
-﻿using CELTAPI.Model;
+﻿/**
+* @license
+* Copyright Team Glare. All Rights Reserved.
+*
+* Use of this source code is governed by an MIT-style license that can be
+* found in the LICENSE file at https://github.com/Team-Glare/CELT2/blob/main/LICENSE
+*/
+
+using CELTAPI.Model;
 using CELTAPI.Utilities;
 using Microsoft.AspNetCore.Http;
 using System.IO;
@@ -15,9 +23,9 @@ namespace CELTAPI.Services
         private readonly IServerClient _serverClient;
 
         /// <summary>
-        /// Constructor for SentimentService with the injected depenedencies.
+        /// Constructor for SentimentService with the injected dependencies.
         /// </summary>
-        /// <param name="reader">the IServerClient for the connection to server.</param>
+        /// <param name="reader">The IServerClient for the connection to server.</param>
         /// <param name="serverClient">The IStreamReader for reading stream for file.</param>
         public SentimentService(IStreamReader reader, IServerClient serverClient)
         {

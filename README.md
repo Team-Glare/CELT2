@@ -53,7 +53,7 @@ The advantages of CELT2.0 architecture:
 * [CELT2.0 Website](https://team-glare.github.io/CELT2/)
 
 
-## Steps for execution
+## 
 
 <img width="882" alt="Capture1" src="https://user-images.githubusercontent.com/89327790/134822122-aabc6591-3c7f-4d4d-b4d2-991f6e4d6684.PNG">
 

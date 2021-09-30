@@ -33,7 +33,7 @@ jobs:
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
     - name: Test with pytest, upload to codecov
       run: |
-        pytest --cov-report xml:cov.xml --cov=glare/tests ./glare/tests/
+        pytest --cov-report xml:cov.xml --cov=glare/tests ./celt2/server/
     - name: "Upload coverage to Codecov"
       uses: codecov/codecov-action@v1
       with:

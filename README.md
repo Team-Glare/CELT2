@@ -93,7 +93,7 @@ The central function of our sentiment analyzer is similar, and the inputs that a
 
 CELT2.0 offers certain improvmenets over the original that make it easier to use and develop:
 * Deployed on a server instead of locally
-* Easier install process - central setup script __ADD NAME OF SCRIPT__
+* Easier install process - central setup script setup.sh
 * Line by line analysis - unfinished but supported by the analyzer 
 
 ## FUTURE SCOPE

@@ -46,7 +46,7 @@ namespace CELTAPI.Services
         }
 
         /// <summary>
-        /// Calculates the sentiment from text file.
+        /// Calculates the sentiment from the text file.
         /// </summary>
         /// <param name="file">The input text file.</param>
         /// <returns>The calculated sentiment label with cumulative probability.</returns>

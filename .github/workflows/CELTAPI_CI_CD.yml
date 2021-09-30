@@ -30,12 +30,17 @@ jobs:
     - name: Make Directory for test results
       run: mkdir -p testresults
     - name: Run Nunit Tests
-      run: dotnet test ${{env.SOLUTIONPATH}} --logger html --results-directory testresults --no-build
+      run: dotnet test ${{env.SOLUTIONPATH}} --logger html --results-directory testresults --no-build --verbosity normal /p:CollectCoverage=true /p:CoverletOutputFormat=opencover
     - name: Upload test results
       uses: actions/upload-artifact@v2
       with:
         name: TestRunReports
         path: testresults
+    - name: Upload coverage result to Codecov
+      uses: codecov/codecov-action@v2
+      with:
+        file: coverage.opencover.xml
+        directory: FUI.Tests    
 
     - name: dotnet publish
       run: dotnet publish ${{env.SOLUTIONPATH}} -c Release -o ${{env.DOTNET_ROOT}}/myapp

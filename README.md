@@ -7,7 +7,9 @@
 [![Build and Publish CELTAPI to Azure Web App](https://github.com/Team-Glare/CELT2/actions/workflows/CELTAPI_CI_CD.yml/badge.svg)](https://github.com/Team-Glare/CELT2/actions/workflows/CELTAPI_CI_CD.yml) [![Build and Publish Server to Digital Ocean](https://github.com/Team-Glare/CELT2/actions/workflows/publish-on-release.yaml/badge.svg)](https://github.com/Team-Glare/CELT2/actions/workflows/publish-on-release.yaml)
 
 
-<iframe src="https://spark.adobe.com/video/RXqEmk9OT2ARr/embed"  width="960" height="540" frameborder="0" allowfullscreen></iframe>
+<figure class="video_container">
+  <iframe src="https://spark.adobe.com/video/RXqEmk9OT2ARr/embed" frameborder="0" allowfullscreen="true"> </iframe>
+</figure>
 
 
 ## INTRODUCTION

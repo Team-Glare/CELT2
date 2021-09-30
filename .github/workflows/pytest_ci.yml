@@ -38,6 +38,6 @@ jobs:
       run: |
         pytest --cov-report=xml --cov=./ ./celt2/server
     - name: "Upload coverage to Codecov"
-      uses: codecov/codecov-action@v1
+      uses: codecov/codecov-action@v2
       with:
         fail_ci_if_error: true

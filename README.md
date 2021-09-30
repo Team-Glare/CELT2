@@ -76,7 +76,7 @@ Dependencies:
 
 Running the Server:
 * Locally:
-    * Within the server subdirectory, you can run ```./boot_dockerless.sh```, which will run flask for you (after checking all of the require depedencies exist). This will only allow for local connections and testing.
+    * Within the server subdirectory, you can run ```./boot_dockerless.sh```, which will run Flask for you (after checking all of the require depedencies exist). This will only allow for local connections and testing.
 * Containerized:
     * We assume that you are using Digital Ocean for the sake of these steps - we highly encourage this, as Digital Ocean provides students $100 credit through the GitHub students program. 
     * Ensure that the latest version of your code is pushed to GitHub. Go to the ```Actions tab```, and select ```Build and Publish Server to Digital Ocean```. Click ```Run Workflow```, and specify a version number. After some time, this will deploy an image to the Digital Ocean Images storage.

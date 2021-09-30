@@ -40,7 +40,7 @@ jobs:
       uses: codecov/codecov-action@v2
       with:
         file: coverage.opencover.xml
-        directory: FUI.Tests    
+        directory: CELTAPI.Tests    
 
     - name: dotnet publish
       run: dotnet publish ${{env.SOLUTIONPATH}} -c Release -o ${{env.DOTNET_ROOT}}/myapp

@@ -26,7 +26,7 @@ jobs:
         pip install flake8 pytest pytest-cov coverage
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
         chmod +x $GITHUB_WORKSPACE/setup.sh
-        chmod +x $GITHUB_WORKSPACE/celt2/api/setup.sh
+        chmod +x $GITHUB_WORKSPACE/api/setup.sh
         ./setup.sh
     - name: Lint with flake8
       run: |

@@ -1,5 +1,13 @@
-# -*- coding: utf-8 -*-
 """
+/**
+* @license
+* Copyright Team Glare. All Rights Reserved.
+*
+* Use of this source code is governed by an MIT-style license that can be
+* found in the LICENSE file at https://github.com/Team-Glare/CELT2/blob/main/LICENSE
+*/
+ -*- coding: utf-8 -*-
+
 Created on Wed Sep  8 00:51:48 2021
 
 @author: user

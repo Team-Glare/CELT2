@@ -37,7 +37,7 @@ namespace CELTAPI.Services
         /// Calculates the sentiment from plain text.
         /// </summary>
         /// <param name="input">The plain text input.</param>
-        /// <returns>The calculated sentiment label with cumalative probability.</returns>
+        /// <returns>The calculated sentiment label with cumulative probability.</returns>
         public async Task<string> CalculateSentimentFromText(TextInput input)
         {
             var result = await _serverClient.PostAsync<SentimentResult, TextInput>($"sentiment/text", input);
@@ -49,7 +49,7 @@ namespace CELTAPI.Services
         /// Calculates the sentiment from text file.
         /// </summary>
         /// <param name="file">The input text file.</param>
-        /// <returns>The calculated sentiment label with cumalative probability.</returns>
+        /// <returns>The calculated sentiment label with cumulative probability.</returns>
         public async Task<string> CalculateSentimentFromTextFile(IFormFile file)
         {
             var input = new TextInput();

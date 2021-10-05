@@ -1,6 +1,5 @@
 #! /bin/bash
 echo "Running the API locally.."
-cd ./celt2/API
 echo "Install the dependencies..."
 dotnet restore
 echo "Build the solution..."

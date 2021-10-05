@@ -80,10 +80,10 @@ An example of the analysis of an uploaded file:
 ## Setup
 
 Prerequisites:
-* .NET >= 5.0
-* Docker >= 20.10.7
-* Python >= 3.8
-* pip >= 20.0.2
+* [.NET](https://dotnet.microsoft.com/download/dotnet/5.0) >= 5.0
+* [Docker](https://docs.docker.com/get-docker/) >= 20.10.7
+* [Python](https://www.python.org/downloads/) >= 3.8
+* [pip](https://pip.pypa.io/en/stable/cli/pip_install/) >= 20.0.2
 
 Strongly recommended:
 * Environment capable of using a UNIX-based terminal - Ubuntu, macOS, WSL/2, etc.

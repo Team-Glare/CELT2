@@ -86,7 +86,7 @@ Prerequisites:
 * [pip](https://pip.pypa.io/en/stable/cli/pip_install/) >= 20.0.2
 
 Strongly recommended:
-* Environment capable of using a UNIX-based terminal - Ubuntu, macOS, WSL/2, etc.
+* Environment capable of using a UNIX-based terminal - Ubuntu, WSL/2, etc.
 
 Dependencies:
 * Within the context of the root folder, run ```setup.sh```. This will acquire the requirements from the API, Model, and Server, and download them for you from the appropriate sources.

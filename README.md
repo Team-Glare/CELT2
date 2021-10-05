@@ -83,7 +83,7 @@ Prerequisites:
 * [.NET](https://dotnet.microsoft.com/download/dotnet/5.0) >= 5.0
 * [Docker](https://docs.docker.com/get-docker/) >= 20.10.7
 * [Python](https://www.python.org/downloads/) >= 3.8
-* [pip](https://pip.pypa.io/en/stable/cli/pip_install/) >= 20.0.2
+* [pip](https://linuxize.com/post/how-to-install-pip-on-ubuntu-20.04/) >= 20.0.2
 
 Strongly recommended:
 * Environment capable of using a UNIX-based terminal - Ubuntu, WSL/2, etc.

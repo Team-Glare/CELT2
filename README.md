@@ -91,7 +91,7 @@ Strongly recommended:
 Dependencies:
 * Within the context of the root folder, run ```setup.sh```. This will acquire the requirements from the API, Model, and Server, and download them for you from the appropriate sources.
 
-*If the script says "command not found" or something similar, either run ```chmod +x ./setup.sh``` or ```bash ./setup.sh```. The former gives you execution privileges permanently, the latter forces it to run through a new shell instance.*
+*If the script says "command not found" or something similar, either run ```chmod +x ./setup.sh```. This grants the script execution privileges. Depending on your setup, this may occur for the boot_dockerless files, amongst others. The same command will fix the issue.*
 
 
 Running the Server:

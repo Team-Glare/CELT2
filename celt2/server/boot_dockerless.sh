@@ -8,4 +8,4 @@
 # Please cd into ~/celt2/server before attempting to run.
 pip install -r ../model/requirements.txt -f https://download.pytorch.org/whl/lts/1.8/torch_lts.html
 pip install -r ./requirements.txt
-flask run
+flask run -h 127.0.0.1 -p 8000

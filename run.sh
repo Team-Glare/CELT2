@@ -7,4 +7,4 @@ echo "Build the solution..."
 dotnet build
 echo "Run the API..."
 cd CELTAPI
-dotnet run CELTAPI.csproj
+dotnet run CELTAPI.csproj &

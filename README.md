@@ -1,3 +1,4 @@
+
 # CELT2.0: Sentiment Analyzer  
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) [![GitHub issues](https://img.shields.io/github/issues/Team-Glare/CELT2)](https://github.com/Team-Glare/CELT2/issues)  [![codecov](https://img.shields.io/badge/codecov-100%25-brightgreen)](https://codecov.io/gh/Team-Glare/CELT2)
@@ -23,6 +24,8 @@ The following technologies were used to complete the development, and it is reco
   * ASP.NET Core Web API 3.1
   * Nunit and Moq (Test Framework)
 * Server
+  * Flask Server & Dockerfile for Containerization
+  * Pytest (Test Framework)
 * Model
   * Flair
   * Torch
@@ -30,11 +33,27 @@ The following technologies were used to complete the development, and it is reco
 Although we have used HTML and CSS for the FrontEnd, the users can merge the backend logic with any of the front-end frameworks they wish to use such as React, angularJS, etc.
 
 
+![CELT2.0 Architecture](https://user-images.githubusercontent.com/8182937/135469169-44d400b6-ff5f-481b-8a23-d3965c8d6cb2.png)
+
+In our repo, we have separate directories of frontend, API, server, and model.
+
+* Frontend: If any code is committed into the frontend directory, then the frontend gets published to GitHub pages using the Github actions. Our published frontend URL: https://team-glare.github.io/CELT2/
+* API: If any code is committed into the API directory, then the API gets published to Azure Webapp using the Github actions. Our published API URL: https://celtapi.azurewebsites.net/
+* Model & Server: If any code is committed into the model and server directory, then the model & server gets published to Digital Ocean using the Github actions.
+
+The advantages of CELT2.0 architecture:
+* Easily maintainable.
+* Can be easily swapped out any submodule with a different module.
+* Each sub-module can be tested separately.
+* Each sub-module change can be published separately.
+
+
+
 ## WEBSITE
 * [CELT2.0 Website](https://team-glare.github.io/CELT2/)
 
 
-## Steps for execution
+## 
 
 <img width="882" alt="Capture1" src="https://user-images.githubusercontent.com/89327790/134822122-aabc6591-3c7f-4d4d-b4d2-991f6e4d6684.PNG">
 
@@ -58,6 +77,40 @@ An example of the analysis of a positive sample text:
 An example of the analysis of an uploaded file:
 <img width="920" alt="Capture4" src="https://user-images.githubusercontent.com/89327790/134822127-522b4c64-2319-4f0e-a444-17debe948e2c.PNG">
 
+## Setup
+
+Prerequisites:
+* [.NET](https://dotnet.microsoft.com/download/dotnet/5.0) >= 5.0
+* [Docker](https://docs.docker.com/get-docker/) >= 20.10.7
+* [Python](https://www.python.org/downloads/) >= 3.8
+* [pip](https://pip.pypa.io/en/stable/cli/pip_install/) >= 20.0.2
+
+Strongly recommended:
+* Environment capable of using a UNIX-based terminal - Ubuntu, macOS, WSL/2, etc.
+
+Dependencies:
+* Within the context of the root folder, run ```setup.sh```. This will acquire the requirements from the API, Model, and Server, and download them for you from the appropriate sources.
+
+*If the script says "command not found" or something similar, either run ```chmod +x ./setup.sh``` or ```bash ./setup.sh```. The former gives you execution privileges permanently, the latter forces it to run through a new shell instance.*
+
+
+Running the Server:
+* Locally:
+    * Within the server subdirectory, you can run ```./boot_dockerless.sh```, which will run Flask for you (after checking all of the require depedencies exist). This will only allow for local connections and testing.
+* Containerized:
+  * Containerization instructions can be viewed in [containerization.md](containerization.md)
+
+Running the API:
+* Locally:
+    * If you have run the ```setup.sh``` above, then the API will be listening on 'https://localhost:5001'.
+    * You can run it manually as well by moving into the subdirectory API/CELTAPI and run this command `dotnet run CELTAPI.csproj`
+
+Running the Frontend:
+* Locally:
+	* In the ```main.js``` file, replace the ```apiBaseURL``` with the above API url.
+	* Open the ```index.html``` file to access the main page. 
+
+
 ## INSPIRATION AND IMPROVEMENTS
 
 Our Sentiment Analyzer is based on work done by a previous group:
@@ -65,9 +118,9 @@ Our Sentiment Analyzer is based on work done by a previous group:
 
 The central function of our sentiment analyzer is similar, and the inputs that are supported in Phase 1 are available in the original Sentiment Analyzer.
 
-CELT2.0 offers certain improvmenets over the original that make it easier to use and develop:
+CELT2.0 offers certain improvements over the original that make it easier to use and develop:
 * Deployed on a server instead of locally
-* Easier install process - central setup script __ADD NAME OF SCRIPT__
+* Easier install process - central setup script setup.sh
 * Line by line analysis - unfinished but supported by the analyzer 
 
 ## FUTURE SCOPE
@@ -77,7 +130,10 @@ Core functionality to be added:
 * Video and audio file analysis
 * Sentiment comparison of 2+ inputs
 * Optionally show line by line analysis
+* Create a separate DEV server for code integration.
+* Add integration tests.
 * Implement style and code checkers
+* Allow server/model to analyze larger amounts of data
 
 
 ## LICENSE

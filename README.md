@@ -102,7 +102,7 @@ Running the Server:
 
 Running the API:
 * Locally:
-    * If you have run the ```setup.sh``` above, then the API will be listening on 'https://localhost:5001'.
+    * Within the API subdirectory, run the ```run.sh```, then the API will be listening on 'https://localhost:5001'.
     * You can run it manually as well by moving into the subdirectory API/CELTAPI and run this command `dotnet run CELTAPI.csproj`
 
 Running the Frontend:

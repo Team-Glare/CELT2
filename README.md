@@ -96,7 +96,7 @@ Running the Server:
 * Locally:
     * Within the server subdirectory, you can run ```./boot_dockerless.sh```, which will run Flask for you (after checking all of the require depedencies exist). This will only allow for local connections and testing.
 * Containerized:
-  * Containerization can be viewed in [containerization.md](containerization.md)
+  * Containerization instructions can be viewed in [containerization.md](containerization.md)
 
 Running the API:
 * Locally:

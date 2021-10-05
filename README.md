@@ -96,10 +96,7 @@ Running the Server:
 * Locally:
     * Within the server subdirectory, you can run ```./boot_dockerless.sh```, which will run Flask for you (after checking all of the require depedencies exist). This will only allow for local connections and testing.
 * Containerized:
-    * We assume that you are using Digital Ocean for the sake of these steps - we highly encourage this, as Digital Ocean provides students $100 credit through the GitHub students program. 
-    * To setup a Digital Ocean access key, once logged in, go to the ```API``` tab, and generate a Personal Access Token. Save this as ```DIGITALOCEAN_ACCESS_TOKEN``` within the repository secrets, and the workflows will automatically use it.
-    * Ensure that the latest version of your code is pushed to GitHub. Go to the ```Actions tab```, and select ```Build and Publish Server to Digital Ocean```. Click ```Run Workflow```, and specify a version number. After some time, this will deploy an image to the Digital Ocean Images storage.
-    * After this, enter the ```Apps tab```, create an App, and set the run command ```gunicorn --worker-tmp-dir /dev/shm --chdir ./server app:app```. Once the app is deployed, the server should be available at an external link, viewable at the top of the dashboard.
+  * Containerization can be viewed in [containerization.md](containerization.md)
 
 Running the API:
 * Locally:

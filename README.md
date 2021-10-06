@@ -96,18 +96,19 @@ Dependencies:
 
 Running the Server:
 * Locally:
-    * Within the server subdirectory, you can run ```./boot_dockerless.sh```, which will run Flask for you (after checking all of the require depedencies exist). This will only allow for local connections and testing.
+    * Within the server subdirectory, you can run ```./boot_dockerless.sh```, which will run Flask for you (after checking all of the require depedencies exist). This will only allow for local connections and testing. The server will be listening on 'http://localhost:8000' 
 * Containerized:
   * Containerization instructions can be viewed in [containerization.md](containerization.md)
 
 Running the API:
 * Locally:
-    * Within the API subdirectory, run the ```run.sh```, then the API will be listening on 'https://localhost:5001'.
-    * You can run it manually as well by moving into the subdirectory API/CELTAPI and run this command `dotnet run CELTAPI.csproj`
+    * Within the API/CELTAPI subdirectory, change `ServerBaseURL` of the appsettings.json to `http://localhost:8000'.
+    * Then, within the API subdirectory, run the ```run.sh```, then the API will be listening on 'https://localhost:5001'.
+    * You can run the API manually as well by moving into the subdirectory API/CELTAPI and run this command `dotnet run CELTAPI.csproj`
 
 Running the Frontend:
 * Locally:
-	* In the ```main.js``` file, replace the ```apiBaseURL``` with the above API url.
+	* In the ```main.js``` file, replace the ```apiBaseURL``` with the above API url 'https://localhost:5001'.
 	* Open the ```index.html``` file to access the main page. 
 
 

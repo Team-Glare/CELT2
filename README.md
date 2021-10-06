@@ -102,7 +102,7 @@ Running the Server:
 
 Running the API:
 * Locally:
-    * Within the API/CELTAPI subdirectory, change `ServerBaseURL` of the appsettings.json to `http://localhost:8000'.
+    * Within the API/CELTAPI subdirectory, change `ServerBaseURL` of the `appsettings.json` to 'http://localhost:8000'.
     * Then, within the API subdirectory, run the ```run.sh```, then the API will be listening on 'https://localhost:5001'.
     * You can run the API manually as well by moving into the subdirectory API/CELTAPI and run this command `dotnet run CELTAPI.csproj`
 

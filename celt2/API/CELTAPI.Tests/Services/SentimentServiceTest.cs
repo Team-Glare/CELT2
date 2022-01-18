@@ -35,7 +35,7 @@ namespace CELTAPI.Tests.Services
 
             var mockResult = new SentimentResult
             {
-                label = "Negative"
+                label = "Positive"
             };
 
             mockServerClient.Setup(o => o.PostAsync<SentimentResult, TextInput>(It.IsAny<string>(), It.IsAny<TextInput>())).ReturnsAsync(mockResult);
